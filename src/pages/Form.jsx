@@ -5,7 +5,7 @@ import "../custom-styles.css";
 
 export const Form = () => {
   return (
-    <form className="grid-custom min-h-[840px]">
+    <form className="grid-custom min-h-[840px] h-dvh">
       <FormNavbarTop />
       <FormBody />
       <FormNavbarBot />

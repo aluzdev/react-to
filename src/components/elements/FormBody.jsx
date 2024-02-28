@@ -1,10 +1,10 @@
 export const FormBody = () => {
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-col gap-5 max-h-[280px] ">
+    <div className="flex flex-col p-4">
+      <div className="flex flex-col gap-5 max-h-[280px]">
         <input
           type="text"
-          className="font-bold w-full bg-transparent text-4xl"
+          className="font-extrabold w-full bg-transparent text-3xl"
           placeholder="New post title here"
         />
         <input
@@ -19,7 +19,7 @@ export const FormBody = () => {
         />
       </div>
       <textarea
-        className="h-full bg-transparent mt-5"
+        className="h-full bg-transparent mt-5 font-mono text-lg"
         name="content"
         id="content"
         type="text"

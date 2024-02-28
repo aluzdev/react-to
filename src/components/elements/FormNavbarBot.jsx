@@ -1,14 +1,14 @@
 import { Button } from "./Button";
+import { Hexagon } from "../../icons";
 export const FormNavbarBot = () => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-4 bg-neutral-200 p-4 items-center justify-start">
       <Button type="primary">Publish</Button>
-      <button className="bg-[#3B49DF] hover:bg-[#3a2fb2] text-white rounded-md py-2 px-4 font-semibold">
-        Publish
+      <button type="button">Save Draft</button>
+      <button type="button">
+        <Hexagon />
       </button>
-      <button className="bg-[#3B49DF] hover:bg-[#3a2fb2] text-white rounded-md py-2 px-4 font-semibold">
-        Publish
-      </button>
+      <button type="button">Revert new changes</button>
     </div>
   );
 };
