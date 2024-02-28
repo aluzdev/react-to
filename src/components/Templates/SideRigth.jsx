@@ -4,7 +4,7 @@ export const SideRigth = () => {
   return (
     <>
       <aside className="w-[21rem]">
-        <div className="divide-y divide-gray-300 bg-slate-50 w-[20rem] rounded-md">
+        <div className="divide-y divide-gray-300 bg-slate-50 w-[20.5rem] rounded-md">
           <Button type="rigth_sidebar">
             <p className="text-xl font-semibold"> #discuss</p>
             <p className="text-gray-500 text-xs">
