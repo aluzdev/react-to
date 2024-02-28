@@ -1,4 +1,4 @@
-import { Home, Microphone, Camera, Tag, Idea, Bag } from "../../icons/Icons";
+import { Home, Microphone, Camera, Tag, Idea, Bag } from "../../icons/";
 import { Button } from "../elements/Button";
 
 export const SideLeft = () => {
@@ -109,21 +109,29 @@ export const SideLeft = () => {
         <Button type="left_sidebar"> #security</Button>
         <Button type="left_sidebar"> #go</Button>
       </div>
-      
+
       <div className="bg-slate-50 grid gap-4 rounded-lg mt-10 p-3">
         <p className="text-sm text-gray-500 ">DEV Community</p>
-       
-        <img src="/darkmode.png" alt="" className="w-52 mx-auto"/>
 
-        <h3>Life is too short to browse without <a href="">dark mode.</a></h3>
-        <p>You can customize your theme, font, and more <a href=""> when you are signed in</a>.</p>
-       
+        <img src="/darkmode.png" alt="" className="w-52 mx-auto" />
+
+        <h3>
+          Life is too short to browse without <a href="">dark mode.</a>
+        </h3>
+        <p>
+          You can customize your theme, font, and more{" "}
+          <a href=""> when you are signed in</a>.
+        </p>
       </div>
 
       <div className="mt-10 text-[0.825rem] p-2">
-        DEV Community A constructive and inclusive social network for software developers. With you every step of your journey. <br /><br />
-            Built on Forem — the open source software that powers DEV and other inclusive communities. <br /><br />
-            Made with love and Ruby on Rails. DEV Community © 2016 - 2024.
+        DEV Community A constructive and inclusive social network for software
+        developers. With you every step of your journey. <br />
+        <br />
+        Built on Forem — the open source software that powers DEV and other
+        inclusive communities. <br />
+        <br />
+        Made with love and Ruby on Rails. DEV Community © 2016 - 2024.
       </div>
     </aside>
   );

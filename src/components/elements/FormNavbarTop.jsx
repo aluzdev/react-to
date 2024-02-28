@@ -1,4 +1,4 @@
-import { CancelIcon } from "./CancelIcon";
+import { CancelIcon } from "../../icons";
 
 export const FormNavbarTop = () => {
   return (

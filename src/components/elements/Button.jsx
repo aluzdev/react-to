@@ -33,7 +33,7 @@ export const Button = ({ type, width, align, onClick, children }) => {
     "px-3.5 bg-transparent w-[170px] h-[40px] text-sm border border-solid border-[#D6D6D7] ":
       type === "coverImage",
 
-    "text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800":
+    "bg-[#3B49DF] hover:bg-[#3a2fb2] text-white rounded-md py-2 px-4 font-semibold":
       type === "primary",
 
     // "hover:bg-grayButton hover:text-blueButton hover:underline decoration-solid text-left text-[16px] ": type === "hash",
