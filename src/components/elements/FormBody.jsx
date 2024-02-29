@@ -1,4 +1,5 @@
-export const FormBody = () => {
+// eslint-disable-next-line react/prop-types
+export const FormBody = ({ register }) => {
   return (
     <div className="flex flex-col p-4">
       <div className="flex flex-col gap-5 max-h-[280px]">
@@ -6,16 +7,22 @@ export const FormBody = () => {
           type="text"
           className="font-extrabold w-full bg-transparent text-3xl"
           placeholder="New post title here"
+          name="title"
+          {...register("title")}
         />
         <input
           type="text"
           className=" w-full bg-transparent text-2xl"
           placeholder="url of cover image"
+          name="coverImage"
+          {...register("coverImage")}
         />
         <input
           type="text"
           className=" w-full bg-transparent text-2xl"
           placeholder="add up to 4 tags..."
+          name="tags"
+          {...register("tags")}
         />
       </div>
       <textarea
@@ -24,6 +31,7 @@ export const FormBody = () => {
         id="content"
         type="text"
         placeholder="Write your post here . . . "
+        {...register("content")}
       ></textarea>
     </div>
   );
