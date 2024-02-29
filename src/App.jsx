@@ -1,18 +1,19 @@
 import { Route, Routes } from "react-router-dom";
 import { Form } from "./pages/Form";
+import { Navbar } from "./components/Templates/Navbar";
 import { HomePage } from "./pages/HomePage";
 import { Login } from "./pages/Login";
+import { IndividualPostPage } from "./pages/IndividualPostPage";
 
 function App() {
   return (
     <>
-      {/*<Routes>
+      <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/new" element={<Form />}></Route>
-  </Routes>*/}
-      <>
-        <Login></Login>
-      </>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/post" element={<IndividualPostPage />}></Route>
+      </Routes>
     </>
   );
 }

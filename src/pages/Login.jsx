@@ -1,5 +1,23 @@
+import { useForm } from "react-hook-form";
 import { Apple, Forem, Github, Twitter } from "../icons/";
+import { useState } from "react";
+import { loginRequest } from "../api";
+import { useNavigate } from "react-router-dom";
+
 export const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const navigate = useNavigate();
+  const onSubmit = handleSubmit(async (userData) => {
+    const response = await loginRequest(userData);
+    console.log(response);
+    localStorage.setItem("token", response.data);
+    navigate("/");
+  });
+
   return (
     <>
       <div className="flex items-center justify-items-center flex-col w-full">
@@ -61,14 +79,16 @@ export const Login = () => {
           <div id="div formLogIn" className="w-7/12">
             <form
               className="flex items-left justify-items-left flex-col"
-              action=""
+              onSubmit={onSubmit}
             >
               <label>Email</label>
               <input
                 className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-4"
                 type="email"
-                id="email"
+                placeholder="email"
+                {...register("email")}
               />
+
               <label>Password</label>
               <input
                 className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-4"
@@ -76,9 +96,9 @@ export const Login = () => {
                 id="password"
               />
               <div className="flex justify-between mx-2 my-3">
-                <div className="">
-                  <input className="" type="checkbox" id="checkbox" />
-                  <label className="ml-2" for="checkbox">
+                <div>
+                  <input type="checkbox" id="checkbox" />
+                  <label className="ml-2" htmlFor="checkbox">
                     Remember Me
                   </label>
                 </div>
