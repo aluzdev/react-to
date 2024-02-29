@@ -28,7 +28,7 @@ export const CardCenter = ({
               alt=""
               className="rounded-full w-10 border-[1px] border-black"
             />
-            <div className="pl-3 flex flex-col  gap-0">
+            <div className="pl-3 flex flex-col gap-0">
               <p className="text-[14px]">{author}</p>
               <p className="text-[12px]">{formatDateAndTimeAgo(createdAt)}</p>
             </div>

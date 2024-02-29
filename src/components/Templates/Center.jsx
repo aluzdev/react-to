@@ -10,7 +10,7 @@ export const Center = () => {
         <Button type="filter">Top</Button>
       </div>
 
-      <CardCenter></CardCenter>
+      <CardCenter tags={["#ghost", "#life"]}></CardCenter>
 
       <CardCenter></CardCenter>
     </div>
