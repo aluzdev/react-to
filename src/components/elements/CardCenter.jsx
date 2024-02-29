@@ -10,12 +10,16 @@ export const CardCenter = ({
   coverImage,
   createdAt,
 }) => {
-  const defaultAvatar =
+  const defaultCoverImage =
     "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffftdkjmm99z06bu2qggi.gif";
   return (
     <>
       <div className="bg-slate-100 rounded-lg mb-6">
-        <img src={avatar || defaultAvatar} alt="" className="rounded-lg" />
+        <img
+          src={coverImage || defaultCoverImage}
+          alt=""
+          className="rounded-lg"
+        />
 
         <div className="p-5 ">
           <div className="flex mb-4">
