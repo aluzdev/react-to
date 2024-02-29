@@ -4,6 +4,7 @@ import { FormBody } from "../components/elements/FormBody";
 import { FormNavbarTop } from "../components/elements/FormNavbarTop";
 import { FormNavbarBot } from "../components/elements/FormNavbarBot";
 import "../custom-styles.css";
+import { API_URL } from "../api";
 
 const getRandomNumberBetweenOneAndTen = () =>
   Math.floor(Math.random() * 10) + 1;
@@ -22,10 +23,15 @@ export const Form = () => {
       ...data,
       rating: getRandomNumberBetweenOneAndTen(),
       revelant: getRandomBoolean(),
-      creationDate: new Date(),
       tags: transformTagsToArray(data.tags), //aprovecharé para mandar un array de tags al servidor en lugar de solo texto
     };
     console.log(dataWithFilterUtilities);
+
+    fetch(`${API_URL}/posts`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dataWithFilterUtilities),
+    });
   };
   return (
     <form
