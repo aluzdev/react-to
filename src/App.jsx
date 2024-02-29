@@ -7,13 +7,11 @@ import { Login } from "./pages/Login";
 function App() {
   return (
     <>
-      {/*<Routes>
+      <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/new" element={<Form />}></Route>
-  </Routes>*/}
-      <>
-        <Login></Login>
-      </>
+        <Route path="/login" element={<Login />}></Route>
+      </Routes>
     </>
   );
 }
