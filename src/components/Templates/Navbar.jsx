@@ -1,7 +1,9 @@
 import { Button } from "../elements/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Navbar = () => {
+  const isLoggedIn = localStorage.getItem("token");
+  const navigate = useNavigate();
   return (
     <nav className="bg-stale-50 flex justify-evenly p-3 h-[60px]">
       <div className="flex w-[420px] gap-3">
@@ -25,12 +27,20 @@ export const Navbar = () => {
       </div>
 
       <div className="flex">
-        <Button type="login" width="nav">
-          <Link to="/login">Log in</Link>
-        </Button>
-        <Button type="create" width="nav">
-          Create account
-        </Button>
+        {!isLoggedIn ? (
+          <div>
+            <Button type="login" width="nav">
+              <Link to="/login">Log in</Link>
+            </Button>
+            <Button type="create" width="nav">
+              Create account
+            </Button>
+          </div>
+        ) : (
+          <Button type="create" width="nav" onClick={() => navigate("/new")}>
+            Create post
+          </Button>
+        )}
       </div>
     </nav>
   );
