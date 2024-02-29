@@ -3,6 +3,7 @@ import { Form } from "./pages/Form";
 import { Navbar } from "./components/Templates/Navbar";
 import { HomePage } from "./pages/HomePage";
 import { Login } from "./pages/Login";
+import { IndividualPostPage } from "./pages/IndividualPostPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/new" element={<Form />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/post" element={<IndividualPostPage />}></Route>
       </Routes>
     </>
   );
