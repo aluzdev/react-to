@@ -6,6 +6,7 @@ export default {
       colors: {
         blueButton: "#3B49DF",
         grayButton: "#3b49df1a",
+        gray25: "#404040",
       },
     },
   },
