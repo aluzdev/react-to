@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { Apple, Forem, Github, Twitter } from "../icons/";
 import { useState } from "react";
 import { loginRequest } from "../api";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   const {
@@ -9,12 +10,12 @@ export const Login = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const [users, setUsers] = useState("");
-
+  const navigate = useNavigate();
   const onSubmit = handleSubmit(async (userData) => {
     const response = await loginRequest(userData);
     console.log(response);
     localStorage.setItem("token", response.data);
+    navigate("/");
   });
 
   return (
@@ -65,7 +66,8 @@ export const Login = () => {
           <div id="div formLogIn" className="w-6/12">
             <form
               className="flex items-left justify-items-left flex-col"
-              onSubmit={onSubmit}>
+              onSubmit={onSubmit}
+            >
               <label>Email</label>
               <input
                 className="bg-transparent border border-neutral-300 gap-1 rounded-md m-1 h-12 mt-4"
