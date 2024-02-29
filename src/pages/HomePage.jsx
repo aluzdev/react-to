@@ -14,5 +14,5 @@ export const HomePage = () => {
         <SideRigth />
       </main>
     </>
-  );
+  );/*  */
 };
