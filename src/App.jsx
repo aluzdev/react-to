@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import { Form } from "./pages/Form";
+import { Navbar } from "./components/Templates/Navbar";
 import { HomePage } from "./pages/HomePage";
 
 function App() {
