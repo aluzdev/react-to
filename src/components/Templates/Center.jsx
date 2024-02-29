@@ -5,7 +5,7 @@ export const Center = () => {
   return (
     <div className="w-[40rem] ">
       <div className="my-3">
-        <Button type="filter" >Relevant</Button>
+        <Button type="filter">Relevant</Button>
         <Button type="filter">Lastest</Button>
         <Button type="filter">Top</Button>
       </div>

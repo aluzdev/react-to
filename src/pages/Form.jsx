@@ -18,7 +18,7 @@ export const Form = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    //Necesitamos añadir propiedades extra para filtrar por fecha, rating y reelevancia.
+    //Necesitamos añadir propiedades extra para filtrar por rating y reelevancia.
     const dataWithFilterUtilities = {
       ...data,
       rating: getRandomNumberBetweenOneAndTen(),

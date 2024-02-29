@@ -1,37 +1,44 @@
+import { formatDateAndTimeAgo } from "../../utils";
 import { Button } from "./Button";
 
-export const CardCenter = () => {
+export const CardCenter = ({
+  author = "John Doe",
+  avatar = "/vite.svg",
+  title,
+  content,
+  tags,
+  coverImage,
+  createdAt,
+}) => {
+  const defaultAvatar =
+    "https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffftdkjmm99z06bu2qggi.gif";
   return (
     <>
       <div className="bg-slate-100 rounded-lg mb-6">
-        <img
-          src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffftdkjmm99z06bu2qggi.gif"
-          alt=""
-          className="rounded-lg"
-        />
+        <img src={avatar || defaultAvatar} alt="" className="rounded-lg" />
 
         <div className="p-5 ">
           <div className="flex mb-4">
             <img
-              src="/vite.svg"
+              src={avatar}
               alt=""
               className="rounded-full w-10 border-[1px] border-black"
             />
             <div className="pl-3 flex flex-col  gap-0">
-              <p className="text-[14px]">Michael Tharrington</p>
-              <p className="text-[12px]">Feb 27</p>
+              <p className="text-[14px]">{author}</p>
+              <p className="text-[12px]">{formatDateAndTimeAgo(createdAt)}</p>
             </div>
           </div>
 
           <div className="pl-10">
-            <h3 className="text-[28px] font-bold">
-              Mentor Matching — February 2024 🤝
-            </h3>
+            <h3 className="text-[28px] font-bold">{title}</h3>
 
             <div className="flex mb-3 h-8">
-              <Button type="tags">#discuss</Button>
-              <Button type="tags">#mentorship</Button>
-              <Button type="tags">#community</Button>
+              {Array.isArray(tags)
+                ? tags.map((tag) => <Button type="tag">{tag}</Button>)
+                : tags
+                    ?.split(", ")
+                    ?.map((tag) => <Button type="tag">{tag}</Button>)}
               <Button type="tags">#career</Button>
             </div>
 
