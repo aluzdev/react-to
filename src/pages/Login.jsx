@@ -86,6 +86,7 @@ export const Login = () => {
                 className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-4"
                 type="email"
                 placeholder="email"
+                name="email"
                 {...register("email")}
               />
 
@@ -93,7 +94,9 @@ export const Login = () => {
               <input
                 className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-4"
                 type="password"
-                id="password"
+                placeholder="password"
+                name="password"
+                {...register("password")}
               />
               <div className="flex justify-between mx-2 my-3">
                 <div>
