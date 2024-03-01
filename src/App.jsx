@@ -9,13 +9,12 @@ import { Register } from "./pages/Register";
 function App() {
   return (
     <>
-      {/*<Routes>
+      <Routes>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/new" element={<Form />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/post" element={<IndividualPostPage />}></Route>
-  </Routes>*/}
-      <Register></Register>
+      </Routes>
     </>
   );
 }

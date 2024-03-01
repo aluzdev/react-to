@@ -11,6 +11,11 @@ import {
   Privacy,
   Terms,
   TwitterBN,
+  Github,
+  Instagram,
+  Twitch,
+  Mastodon,
+  Facebook,
 } from "../../icons/";
 import { Button } from "../elements/Button";
 
@@ -86,7 +91,8 @@ export const SideLeft = () => {
       </div>
 
       <div className="grid grid-cols-6 px-2 my-7">
-        <TwitterBN /> <Home /> <Home /> <Home /> <Home /> <Home />
+        <TwitterBN />
+        <Facebook /> <Github /> <Instagram /> <Twitch /> <Mastodon />
       </div>
 
       <h3 className="font-semibold px-2">Popular Tags</h3>
