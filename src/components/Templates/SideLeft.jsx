@@ -18,6 +18,7 @@ import {
   Facebook,
 } from "../../icons/";
 import { Button } from "../elements/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 export const SideLeft = () => {
   return (
@@ -33,10 +34,10 @@ export const SideLeft = () => {
         </p>
         <br />
         <Button type="create" width="lg">
-          Create account
+          <Link to="/register">Create account</Link>
         </Button>
         <Button type="login" width="lg">
-          Log in
+          <Link to="/login">Log in</Link>
         </Button>
       </div>
       <br />
