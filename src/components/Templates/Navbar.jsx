@@ -1,3 +1,4 @@
+import { Search } from "../../icons";
 import { Button } from "../elements/Button";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -5,8 +6,8 @@ export const Navbar = () => {
   const isLoggedIn = localStorage.getItem("token");
   const navigate = useNavigate();
   return (
-    <nav className="bg-stale-50 flex justify-evenly p-3 h-[60px]">
-      <div className="flex w-[420px] gap-3">
+    <nav className="bg-stale-50 flex justify-between xl:justify-evenly p-3 h-[60px] sticky xl:static top-0 bg-white">
+      <div className="flex xl:w-7/12 gap-3">
         <img
           src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
           alt=""
@@ -21,14 +22,14 @@ export const Navbar = () => {
             name="search"
           />
           <span className="absolute inset-y-0 right-0 flex items-center pr-2 ">
-            <img src="/vite.svg" alt="" />
+            <Search />
           </span>
         </label>
       </div>
 
       <div className="flex">
         {!isLoggedIn ? (
-          <div>
+          <div className="hidden md:block xl:block">
             <Button type="login" width="nav">
               <Link to="/login">Log in</Link>
             </Button>
