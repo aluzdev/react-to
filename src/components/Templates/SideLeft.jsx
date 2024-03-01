@@ -1,4 +1,17 @@
-import { Home, Microphone, Camera, Tag, Idea, Bag } from "../../icons/";
+import {
+  Home,
+  Microphone,
+  Camera,
+  Tag,
+  Idea,
+  Bag,
+  Estrellas,
+  Contact,
+  Conduct,
+  Privacy,
+  Terms,
+  TwitterBN,
+} from "../../icons/";
 import { Button } from "../elements/Button";
 
 export const SideLeft = () => {
@@ -30,28 +43,28 @@ export const SideLeft = () => {
           <Microphone /> Podcast
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Videos
+          <Camera /> Videos
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Tags
+          <Tag /> Tags
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> DEV Help
+          <Idea /> DEV Help
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Forem Shop
+          <Bag /> Forem Shop
         </Button>
         <Button type="left_sidebar" width="lg">
           <Home /> Advertise on DEV
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> DEV Showcase
+          <Estrellas /> DEV Showcase
         </Button>
         <Button type="left_sidebar" width="lg">
           <Home /> About
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Contact
+          <Contact /> Contact
         </Button>
         <Button type="left_sidebar" width="lg">
           <Home /> Guides
@@ -62,18 +75,18 @@ export const SideLeft = () => {
         <br />
         <h3 className="font-semibold px-2">Other</h3>
         <Button type="left_sidebar" width="lg">
-          <Home /> Code of Conduct
+          <Conduct /> Code of Conduct
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Privacy Policy
+          <Privacy /> Privacy Policy
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Terms of use
+          <Terms /> Terms of use
         </Button>
       </div>
 
       <div className="grid grid-cols-6 px-2 my-7">
-        <Home /> <Home /> <Home /> <Home /> <Home /> <Home />
+        <TwitterBN /> <Home /> <Home /> <Home /> <Home /> <Home />
       </div>
 
       <h3 className="font-semibold px-2">Popular Tags</h3>
