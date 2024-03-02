@@ -4,7 +4,7 @@ import { FormBody } from "../components/elements/FormBody";
 import { FormNavbarTop } from "../components/elements/FormNavbarTop";
 import { FormNavbarBot } from "../components/elements/FormNavbarBot";
 import "../custom-styles.css";
-import { API_URL, LOCAL_URL } from "../api";
+import { LOCAL_URL } from "../api";
 import { useNavigate } from "react-router-dom";
 
 const getRandomNumberUpToN = (n) => Math.floor(Math.random() * n) + 1;
@@ -25,7 +25,8 @@ export const Form = () => {
       rating: getRandomNumberUpToN(10),
       revelant: getRandomBoolean(),
       reactions: getRandomNumberUpToN(100),
-      estimatedReadingTime: getRandomNumberUpToN(20),
+      comments: getRandomNumberUpToN(100),
+      readingTime: getRandomNumberUpToN(20),
       tags: transformTagsToArray(data.tags), //aprovecharé para mandar un array de tags al servidor en lugar de solo texto
     };
     console.log(dataWithFilterUtilities);
