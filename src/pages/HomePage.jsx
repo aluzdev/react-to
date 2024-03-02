@@ -8,8 +8,8 @@ export const HomePage = () => {
     <>
       <Navbar />
 
-      <main className=" bg-gray-200 gap-4 ">
-        <div className="gap-4 flex flex-row justify-center mx-auto pt-5 xl:w-4/5">
+      <main className=" bg-gray-200 xl:gap-4 ">
+        <div className="xl:gap-4 flex flex-row justify-center mx-auto pt-5 xl:w-4/5">
           <SideLeft />
           <Center />
           <SideRigth />

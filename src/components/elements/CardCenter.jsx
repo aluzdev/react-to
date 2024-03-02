@@ -86,7 +86,7 @@ export const CardCenter = () => {
                 </div>
               </div>
               <div className="flex flex-row">
-                <div className="flex flex-row text-sm">
+                <div className="flex flex-row py-6 text-sm">
                   <Button type="actions">
                     <Comentario></Comentario>
                     <p className="pr-2 self-center"> 3 comments</p>

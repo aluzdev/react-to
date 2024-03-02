@@ -7,7 +7,7 @@ export const Navbar = () => {
   const navigate = useNavigate();
   return (
     <nav className="bg-stale-50 flex justify-between xl:justify-evenly p-3 h-[60px] sticky xl:static top-0 bg-white">
-      <div className="flex xl:w-7/12 gap-3">
+      <div className="flex md:w-full max-w-7/12 xl:w-7/12 gap-3">
         <img
           src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/resized_logo_UQww2soKuUsjaOGNB38o.png"
           alt=""
