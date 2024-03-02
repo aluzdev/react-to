@@ -10,14 +10,14 @@ export const Navbar = () => {
           className="w-[3.5rem]"
         />
 
-        <label class="relative text-center w-72">
+        <label className="relative text-center w-72">
           <input
-            class=" block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-black text-sm "
+            className=" block bg-white w-full border border-slate-300 rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-black text-sm "
             placeholder="Search..."
             type="text"
             name="search"
           />
-          <span class="absolute inset-y-0 right-0 flex items-center pr-2 ">
+          <span className="absolute inset-y-0 right-0 flex items-center pr-2 ">
             <img src="/vite.svg" alt="" />
           </span>
         </label>
