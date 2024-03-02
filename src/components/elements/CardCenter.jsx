@@ -84,14 +84,14 @@ export const CardCenter = () => {
                   </div>
                   <p className="self-center">27 reactions</p>
                 </div>
-              </div>
-              <div className="flex flex-row">
                 <div className="flex flex-row py-6 text-sm">
                   <Button type="actions">
                     <Comentario></Comentario>
                     <p className="pr-2 self-center"> 3 comments</p>
                   </Button>
                 </div>
+              </div>
+              <div className="flex flex-row">
                 <div className="flex text-sm">
                   <p className="pr-2 self-center"> 17 min read</p>
                   <Button type="actions">
