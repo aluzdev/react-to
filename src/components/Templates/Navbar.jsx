@@ -30,7 +30,7 @@ export const Navbar = () => {
         <div className="flex ">
           {!isLoggedIn ? (
             <div className="  flex flex row ">
-              <div className="hidden md:block lg:block xl:block">
+              <div className="hidden md:block lg:block xl:block space-x-2 px-2">
                 <Button type="login" width="nav">
                   <Link to="/login">Log in</Link>
                 </Button>
