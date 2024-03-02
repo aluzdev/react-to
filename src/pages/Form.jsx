@@ -28,6 +28,7 @@ export const Form = () => {
       comments: getRandomNumberUpToN(100),
       readingTime: getRandomNumberUpToN(20),
       tags: transformTagsToArray(data.tags), //aprovecharé para mandar un array de tags al servidor en lugar de solo texto
+      author: localStorage.getItem("user"),
     };
     console.log(dataWithFilterUtilities);
 
