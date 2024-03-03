@@ -13,6 +13,7 @@ function App() {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/new" element={<Form />}></Route>
         <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
         <Route path="/post" element={<IndividualPostPage />}></Route>
       </Routes>
     </>

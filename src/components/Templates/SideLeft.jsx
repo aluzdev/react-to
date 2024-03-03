@@ -16,13 +16,15 @@ import {
   Twitch,
   Mastodon,
   Facebook,
+  Heart,
 } from "../../icons/";
 import { Button } from "../elements/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 export const SideLeft = () => {
   return (
-    <aside className=" w-[16rem]">
-      <div className="bg-slate-50 rounded-lg p-4">
+    <aside className="hidden md:w-1/5 md:ml-3 md:block xl:w-[16rem] xl:ml-0 xl:block ">
+      <div className="bg-slate-50 rounded-lg p-2">
         <h4 className="font-bold text-xl">
           DEV Community is a community of 1,287,199 amazing developers
         </h4>
@@ -33,10 +35,10 @@ export const SideLeft = () => {
         </p>
         <br />
         <Button type="create" width="lg">
-          Create account
+          <Link to="/register">Create account</Link>
         </Button>
         <Button type="login" width="lg">
-          Log in
+          <Link to="/login">Log in</Link>
         </Button>
       </div>
       <br />
@@ -60,7 +62,7 @@ export const SideLeft = () => {
           <Bag /> Forem Shop
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Advertise on DEV
+          <Heart /> Advertise on DEV
         </Button>
         <Button type="left_sidebar" width="lg">
           <Estrellas /> DEV Showcase

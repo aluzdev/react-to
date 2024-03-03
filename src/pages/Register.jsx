@@ -74,9 +74,8 @@ export const Register = () => {
               Continue with Twitter
             </span>
           </button>
-          <div className="mt-4 mb-4 text-lg">Register with Email</div>
 
-          <div id="div formLogIn" className="w-7/12">
+          <div id="register" className="w-7/12 mt-10">
             <form
               className="flex items-left justify-items-left flex-col"
               onSubmit={onSubmit}

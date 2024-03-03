@@ -554,3 +554,72 @@ export const Facebook = () => {
     </svg>
   );
 };
+export const Search = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      class="crayons-icon c-btn__icon"
+      focusable="false"
+    >
+      <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0111 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 01-1.969 5.617zm-2.006-.742A6.977 6.977 0 0018 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 004.875-1.975l.15-.15z"></path>
+    </svg>
+  );
+};
+export const Comentario = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      role="img"
+      aria-labelledby="atajr1q24bh97cmxcxr7fm470ibe62bf"
+      class="crayons-icon"
+    >
+      <title id="atajr1q24bh97cmxcxr7fm470ibe62bf">Comments</title>
+      <path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path>
+    </svg>
+  );
+};
+export const Unicornio = () => {
+  return (
+    <img
+      src="https://dev.to/assets/multi-unicorn-b44d6f8c23cdd00964192bedc38af3e82463978aa611b4365bd33a0f1f4f3e97.svg"
+      width="18"
+      height="18"
+    ></img>
+  );
+};
+export const Blowmind = () => {
+  return (
+    <img
+      src="https://dev.to/assets/exploding-head-daceb38d627e6ae9b730f36a1e390fca556a4289d5a41abb2c35068ad3e2c4b5.svg"
+      width="18"
+      height="18"
+    ></img>
+  );
+};
+export const Fire = () => {
+  return (
+    <img
+      src="https://dev.to/assets/fire-f60e7a582391810302117f987b22a8ef04a2fe0df7e3258a5f49332df1cec71e.svg"
+      width="18"
+      height="18"
+    ></img>
+  );
+};
+export const Bookmark = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      aria-hidden="true"
+    >
+      <path d="M6.75 4.5h10.5a.75.75 0 01.75.75v14.357a.375.375 0 01-.575.318L12 16.523l-5.426 3.401A.375.375 0 016 19.607V5.25a.75.75 0 01.75-.75zM16.5 6h-9v11.574l4.5-2.82 4.5 2.82V6z"></path>
+    </svg>
+  );
+};
