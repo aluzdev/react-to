@@ -40,24 +40,6 @@ export const IndividualPostPage = () => {
               </div>
             </div>
           </div>
-
-          {/*<ul className="gap-5 grid place-items-center">
-            <li className="cursor-pointer">
-              <img src={Heart} alt="" />
-              <p className="grid place-items-center mt-2 text-slate-500">39</p>
-            </li>
-            <li className="cursor-pointer">
-              <img src={Comentario} alt="" />
-              <p className="grid place-items-center mt-2 text-slate-500">39</p>
-            </li>
-            <li className="cursor-pointer">
-              <img src="/vite.svg" alt="" />
-              <p className="grid place-items-center mt-2 text-slate-500">39</p>
-            </li>
-            <li className="hover:bg-grayButton p-2 rounded-full">
-              <img src="/vite.svg" alt="" />
-            </li>
-  </ul>*/}
         </div>
 
         <div className="flex">
