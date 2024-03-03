@@ -15,6 +15,8 @@ export const Login = () => {
     const response = await loginRequest(userData);
     console.log(response);
     localStorage.setItem("token", response.data);
+    localStorage.setItem("user", response.user);
+
     navigate("/");
   });
 
@@ -25,10 +27,9 @@ export const Login = () => {
           <a>
             <div className="object-contain w-16 h-12 mt-8">
               <img
-                className=""
                 src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/original_logo_0DliJcfsTcciZen38gX9.png"
                 alt="logo"
-                class="logInLogo"
+                className="logInLogo"
               />
             </div>
           </a>
