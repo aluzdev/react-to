@@ -13,3 +13,17 @@ export const loginRequest = async (userData) => {
 
   return data;
 };
+
+
+export const registerRequest = async (userData) => {
+  const response = await fetch(`${API_URL}/users/`, {
+    method: "POST",
+    body: JSON.stringify(userData),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data = await response.json();
+
+  return data;
+};
