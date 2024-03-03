@@ -80,8 +80,7 @@ export const Login = () => {
           <div id="div formLogIn" className="w-7/12">
             <form
               className="flex items-left justify-items-left flex-col"
-              onSubmit={onSubmit}
-            >
+              onSubmit={onSubmit}>
               <label>Email</label>
               <input
                 className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-4"
@@ -113,37 +112,33 @@ export const Login = () => {
               <button className="flex items-center justify-center w-full h-12 bg-blueButton hover:bg-blue-800 border border-neutral-300 mx-auto mt-4 rounded-md">
                 <span className="text-white">Log In</span>
               </button>
-              <div className="w-full gap-1 flex justify-center my-8">
-                <span className="text-gray-600 w-9/12 text-sm italic antialiased font-light text-center">
-                  By signing in, you are agreeing to our
-                  <a className="text-blueButton" href="https://dev.to/privacy">
-                    privacy policy
-                  </a>
-                  ,
-                  <a className="text-blueButton" href="https://dev.to/terms">
-                    terms of use
-                  </a>
-                  and
-                  <a
-                    className="text-blueButton"
-                    href="https://dev.to/code-of-conduct"
-                  >
-                    code of conduct.
-                  </a>
-                </span>
-              </div>
-              <div className="w-full gap-1 flex justify-center mt-6 mb-20">
-                <span className="font-light">
-                  New to DEV Community?{" "}
-                  <a
-                    className="text-blueButton"
-                    href="https://dev.to/enter?state=new-user"
-                  >
-                    Create account.
-                  </a>
-                </span>
-              </div>
             </form>
+            <div className="w-full gap-1 flex justify-center my-8">
+              <span className="text-gray-600 w-9/12 text-sm italic antialiased font-light text-center">
+                By signing in, you are agreeing to our
+                <a className="text-blueButton" href="https://dev.to/privacy">
+                  privacy policy
+                </a>
+                ,
+                <a className="text-blueButton" href="https://dev.to/terms">
+                  terms of use
+                </a>
+                and
+                <a
+                  className="text-blueButton"
+                  href="https://dev.to/code-of-conduct">
+                  code of conduct.
+                </a>
+              </span>
+            </div>
+            <div className="w-full gap-1 flex justify-center mt-6 mb-20">
+              <span className="font-light">New to DEV Community? </span>
+              <div
+                className="text-blueButton ml-4 cursor-pointer"
+                onClick={() => navigate("/register")}>
+                Create account.
+              </div>
+            </div>
           </div>
         </div>
       </div>

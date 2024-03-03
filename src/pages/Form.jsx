@@ -4,8 +4,8 @@ import { FormBody } from "../components/elements/FormBody";
 import { FormNavbarTop } from "../components/elements/FormNavbarTop";
 import { FormNavbarBot } from "../components/elements/FormNavbarBot";
 import "../custom-styles.css";
-import { LOCAL_URL } from "../api";
 import { useNavigate } from "react-router-dom";
+import { API_URL } from "../api";
 
 const getRandomNumberUpToN = (n) => Math.floor(Math.random() * n) + 1;
 const getRandomBoolean = () => Math.random() >= 0.5;
@@ -33,7 +33,7 @@ export const Form = () => {
     console.log(dataWithFilterUtilities);
 
     try {
-      fetch(`${LOCAL_URL}/posts`, {
+      fetch(`${API_URL}/posts`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
