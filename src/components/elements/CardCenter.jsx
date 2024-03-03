@@ -34,10 +34,10 @@ export const CardCenter = () => {
           className="rounded-lg"
         />
         <div
-          id="data-container"
+          id="Contenedro Principal"
           className="w-full px-2 flex justify-center justify-items-center "
         >
-          <div id="hijo" className="p-5  w-full">
+          <div id="contenedorPost" className="p-5  w-full">
             <div className="flex pl-2 mb-4">
               <img
                 src="/vite.svg"
@@ -50,12 +50,12 @@ export const CardCenter = () => {
               </div>
             </div>
 
-            <div className="pl-12">
+            <div id="Contenedor titulo post" className="pl-12">
               <h3 className="text-xl font-bold">
                 Mentor Matching — February 2024 🤝
               </h3>
 
-              <div className="flex flex-wrap mb-3 h-8 ">
+              <div id="contenedor tags" className="flex flex-wrap mb-3 h-8 ">
                 <Button type="tags">#discuss</Button>
                 <Button type="tags">#mentorship</Button>
                 <Button type="tags">#community</Button>
@@ -63,7 +63,7 @@ export const CardCenter = () => {
               </div>
             </div>
             <div
-              id="reactions"
+              id="contenedor reactions"
               className="flex shrink md:justify-between xl: justify-between px-0"
             >
               <div className="flex flex-row">
@@ -82,16 +82,21 @@ export const CardCenter = () => {
                       <Fire></Fire>
                     </Button>
                   </div>
-                  <p className="self-center">27 reactions</p>
+                  <p id="numero de reacciones" className="self-center">
+                    27 reactions
+                  </p>
                 </div>
                 <div className="flex flex-row py-6 text-sm">
                   <Button type="actions">
                     <Comentario></Comentario>
-                    <p className="pr-2 self-center"> 3 comments</p>
+                    <p id="numero comentarios" className="pr-2 self-center">
+                      {" "}
+                      3 comments
+                    </p>
                   </Button>
                 </div>
               </div>
-              <div className="flex flex-row">
+              <div id="contenedor bookmarks" className="flex flex-row">
                 <div className="flex text-sm">
                   <p className="pr-2 self-center"> 17 min read</p>
                   <Button type="actions">
