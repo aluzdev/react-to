@@ -94,7 +94,7 @@ export const Center = ({
   };
 
   return (
-    <div className="md:w-[531px] lg:w-[480px] lg:pr-2">
+    <div className="md:w-[531px] lg:w-[480px] lg:pr-0 xl:pr-0 xl:w-[650px]">
       <div className="my-3 flex justify-between">
         <div>
           <Button
