@@ -36,7 +36,7 @@ export const CardCenter = (props) => {
                 src={props.author?.image}
                 className="rounded-full w-10 border-[1px] border-black"
               />
-              <div className="pl-3 flex flex-col  gap-0">
+              <div className="pl-3 flex flex-col gap-0">
                 <p className="text-[14px]">{props.author?.name}</p>
                 <p className="text-[12px]">{props.createdAt}</p>
               </div>
@@ -78,7 +78,16 @@ export const CardCenter = (props) => {
                       <Fire></Fire>
                     </Button>
                   </div>
-                  <p id="numero de reacciones" className="self-center">
+                  <p
+                    id="numero de reacciones"
+                    className="self-center md:hidden"
+                  >
+                    {props.reactions}
+                  </p>
+                  <p
+                    id="numero de reacciones"
+                    className="self-center hidden md:block"
+                  >
                     {props.reactions} reactions
                   </p>
                 </div>
@@ -86,7 +95,9 @@ export const CardCenter = (props) => {
                   <Button type="actions">
                     <Comentario></Comentario>
                     <p id="numero comentarios" className="pr-2 self-center">
-                      {props.comments} comments
+                      {props.comments}{" "}
+                      <span className="md:hidden"></span>
+                      <span className="hidden md:inline">comments</span>
                     </p>
                   </Button>
                 </div>
@@ -94,7 +105,9 @@ export const CardCenter = (props) => {
               <div id="contenedor bookmarks" className="flex flex-row">
                 <div className="flex text-sm">
                   <p className="pr-2 self-center">
-                    {props.readingTime} minutes
+                    {props.readingTime}{" "}
+                    <span className="md:hidden">min</span>
+                    <span className="hidden md:inline">minutes</span>
                   </p>
                   <Button type="actions">
                     <Bookmark></Bookmark>

@@ -94,9 +94,9 @@ export const Center = ({
   };
 
   return (
-    <div className="w-[40rem]">
-      <div className="my-3 flex justify-between">
-        <div>
+    <div className="w-full md:w-[40rem] mx-auto px-4">
+    <div className="my-3 flex flex-col md:flex-row md:justify-between">
+      <div className="mb-2 md:mb-0">
           <Button
             type="filter"
             onClick={() => handleFilterClick("Relevant")}
@@ -130,7 +130,7 @@ export const Center = ({
           </Button>
         </div>
 
-        <div className="">
+        <div className="flex flex-col md:flex-row">
           {showAdditionalB && (
             <>
               <Button
