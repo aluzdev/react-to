@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useNavigate } from "react-router-dom";
 import { Button } from "./Button";
 import {
@@ -10,7 +11,6 @@ import {
 } from "../../icons/";
 
 export const CardCenter = (props) => {
-  console.log(props);
   const navigate = useNavigate();
 
   const onClick = async () => {
@@ -28,7 +28,8 @@ export const CardCenter = (props) => {
         />
         <div
           id="contenedor-principal"
-          className="w-full px-2 flex justify-center justify-items-center ">
+          className="w-full px-2 flex justify-center justify-items-center "
+        >
           <div id="contenedor-post" className="p-5  w-full">
             <div id="avatar" className="flex pl-2 mb-4">
               <img
@@ -44,7 +45,8 @@ export const CardCenter = (props) => {
             <div id="Contenedor titulo post" className="pl-12">
               <h3
                 className="text-xl font-bold cursor-pointer"
-                onClick={onClick}>
+                onClick={onClick}
+              >
                 {props.title}
               </h3>
 
@@ -58,7 +60,8 @@ export const CardCenter = (props) => {
             </div>
             <div
               id="reactions"
-              className="flex shrink md:justify-between xl: justify-between px-0">
+              className="flex shrink md:justify-between xl: justify-between px-0"
+            >
               <div className="flex flex-row">
                 <div className="flex text-sm content-center hover:bg-grayButton p-1.5 rounded-lg">
                   <div className="flex flex-row">
