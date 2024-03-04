@@ -1,10 +1,30 @@
-import { Home, Microphone, Camera, Tag, Idea, Bag } from "../../icons/";
+import {
+  Home,
+  Microphone,
+  Camera,
+  Tag,
+  Idea,
+  Bag,
+  Estrellas,
+  Contact,
+  Conduct,
+  Privacy,
+  Terms,
+  TwitterBN,
+  Github,
+  Instagram,
+  Twitch,
+  Mastodon,
+  Facebook,
+  Heart,
+} from "../../icons/";
 import { Button } from "../elements/Button";
+import { Link, useNavigate } from "react-router-dom";
 
 export const SideLeft = () => {
   return (
-    <aside className=" w-[16rem]">
-      <div className="bg-slate-50 rounded-lg p-4">
+    <aside className="hidden md:w-1/5 md:ml-3 md:block xl:w-[16rem] xl:ml-0 xl:block ">
+      <div className="bg-slate-50 rounded-lg p-2">
         <h4 className="font-bold text-xl">
           DEV Community is a community of 1,287,199 amazing developers
         </h4>
@@ -15,10 +35,10 @@ export const SideLeft = () => {
         </p>
         <br />
         <Button type="create" width="lg">
-          Create account
+          <Link to="/register">Create account</Link>
         </Button>
         <Button type="login" width="lg">
-          Log in
+          <Link to="/login">Log in</Link>
         </Button>
       </div>
       <br />
@@ -30,28 +50,28 @@ export const SideLeft = () => {
           <Microphone /> Podcast
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Videos
+          <Camera /> Videos
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Tags
+          <Tag /> Tags
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> DEV Help
+          <Idea /> DEV Help
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Forem Shop
+          <Bag /> Forem Shop
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Advertise on DEV
+          <Heart /> Advertise on DEV
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> DEV Showcase
+          <Estrellas /> DEV Showcase
         </Button>
         <Button type="left_sidebar" width="lg">
           <Home /> About
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Contact
+          <Contact /> Contact
         </Button>
         <Button type="left_sidebar" width="lg">
           <Home /> Guides
@@ -62,18 +82,19 @@ export const SideLeft = () => {
         <br />
         <h3 className="font-semibold px-2">Other</h3>
         <Button type="left_sidebar" width="lg">
-          <Home /> Code of Conduct
+          <Conduct /> Code of Conduct
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Privacy Policy
+          <Privacy /> Privacy Policy
         </Button>
         <Button type="left_sidebar" width="lg">
-          <Home /> Terms of use
+          <Terms /> Terms of use
         </Button>
       </div>
 
       <div className="grid grid-cols-6 px-2 my-7">
-        <Home /> <Home /> <Home /> <Home /> <Home /> <Home />
+        <TwitterBN />
+        <Facebook /> <Github /> <Instagram /> <Twitch /> <Mastodon />
       </div>
 
       <h3 className="font-semibold px-2">Popular Tags</h3>

@@ -12,7 +12,7 @@ export const Button = ({ type, width, state, onClick, children, className }) => 
     "hover:bg-grayButton hover:text-blueButton hover:underline decoration-solid text-left flex flex-row text-[0.96rem] gap-2 px-4 py-2 ":
       type === "left_sidebar",
 
-    "w-[20rem] flex flex-col text-left px-3 py-4 text-[16px] rounded-none font-light":
+    "flex flex-col text-left px-3 py-4 text-[16px] rounded-none font-light":
       type === "rigth_sidebar",
 
     "p-2 bg-transparent hover:bg-white hover:text-blueButton text-lg hover:text-bold":
@@ -35,7 +35,7 @@ export const Button = ({ type, width, state, onClick, children, className }) => 
     "bg-[#3B49DF] hover:bg-[#3a2fb2] text-white rounded-md py-2 px-4 font-semibold":
       type === "primary",
 
-      "py-0 ":width === "nav",
+      "py-[0.5rem] ":width === "nav",
 
       // "bg-red-200": state === "focus"
   },className);
