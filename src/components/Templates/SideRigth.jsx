@@ -48,7 +48,7 @@ export const SideRigth = ({ tagsToFilterBy }) => {
             <p className="text-xl font-semibold">
               {filteredPosts
                 ? Object.keys(filteredPosts[0])?.toString()
-                : "#webDev"}
+                : "#webdev"}
             </p>
             <p className="text-gray-500 text-xs">
               Discussion threads targeting the whole community
@@ -65,7 +65,7 @@ export const SideRigth = ({ tagsToFilterBy }) => {
             <p className="text-xl font-semibold">
               {filteredPosts
                 ? Object.keys(filteredPosts[1])?.toString()
-                : "#beginner"}
+                : "#beginners"}
             </p>
             <p className="text-gray-500 text-xs">
               Discussion threads targeting the whole community
