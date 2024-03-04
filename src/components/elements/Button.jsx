@@ -1,6 +1,6 @@
 import classname from "classname";
 
-export const Button = ({ type, width, state, onClick, children }) => {
+export const Button = ({ type, width, state, onClick, children, className }) => {
   const buttonStyle = classname("rounded-lg", {
 
     "bg-transparent border border-solid border-blueButton text-blueButton p-3 hover:bg-blueButton hover:text-white hover:underline decoration-solid":
@@ -38,7 +38,7 @@ export const Button = ({ type, width, state, onClick, children }) => {
       "py-[0.5rem] ":width === "nav",
 
       // "bg-red-200": state === "focus"
-  });
+  },className);
 
   return (
     <button onClick={onClick} className={buttonStyle}>

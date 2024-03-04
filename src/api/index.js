@@ -26,3 +26,10 @@ export const registerRequest = async (userData) => {
 
   return data;
 };
+
+
+export const postById = async (id) => {
+  const resp = await fetch(`${API_URL}/posts/${id}`)
+  const data = await resp.json()
+  return data
+}
