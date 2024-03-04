@@ -170,32 +170,59 @@ export const Center = ({
         </div>
       </div>
 
-      {filteredPosts.map(
-        ({
-          _id,
-          author,
-          title,
-          reactions,
-          tags,
-          coverImage,
-          createdAt,
-          comments,
-          readingTime,
-        }) => (
-          <CardCenter
-            key={_id}
-            _id={_id}
-            author={author}
-            comments={comments}
-            coverImage={coverImage}
-            createdAt={createdAt}
-            reactions={reactions}
-            readingTime={readingTime}
-            tags={tags}
-            title={title}
-          />
-        )
-      )}
+      {!searchBar
+        ? posts.map(
+            ({
+              _id,
+              author,
+              title,
+              reactions,
+              tags,
+              coverImage,
+              createdAt,
+              comments,
+              readingTime,
+            }) => (
+              <CardCenter
+                key={_id}
+                _id={_id}
+                author={author}
+                comments={comments}
+                coverImage={coverImage}
+                createdAt={createdAt}
+                reactions={reactions}
+                readingTime={readingTime}
+                tags={tags}
+                title={title}
+              />
+            )
+          )
+        : filteredPosts.map(
+            ({
+              _id,
+              author,
+              title,
+              reactions,
+              tags,
+              coverImage,
+              createdAt,
+              comments,
+              readingTime,
+            }) => (
+              <CardCenter
+                key={_id}
+                _id={_id}
+                author={author}
+                comments={comments}
+                coverImage={coverImage}
+                createdAt={createdAt}
+                reactions={reactions}
+                readingTime={readingTime}
+                tags={tags}
+                title={title}
+              />
+            )
+          )}
     </div>
   );
 };
