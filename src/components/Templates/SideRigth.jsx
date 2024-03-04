@@ -3,7 +3,7 @@ import { Button } from "../elements/Button";
 export const SideRigth = () => {
   return (
     <>
-      <aside className="hidden lg:block lg:w-[240px] md:pt-[4px] xl:w-[325px] lg:pl-2 xl:pl-16 xl:block">
+      <aside className="hidden lg:block lg:w-[240px] md:pt-[4px] xl:w-[325px] lg:pl-2 xl:pl-20 xl:block">
         <div className="divide-y divide-gray-300 bg-slate-50 lg:w-[240px] lg:pl-2 xl:w-[325px] xl:ml-20 rounded-md">
           <Button type="rigth_sidebar">
             <p className="text-xl font-semibold"> #discuss</p>

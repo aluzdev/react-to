@@ -7,7 +7,7 @@ export const Navbar = ({ setSearchBar, posts, setFilteredPosts }) => {
   const isLoggedIn = localStorage.getItem("token");
   const navigate = useNavigate();
   return (
-    <nav className="flex p-3 w-full md:h-[60px] sm:w-full md:w-[768px] lg:w-[1024px] xl:w-[1440px] xxl:w-full sticky  top-0 bg-white">
+    <nav className="flex p-3 w-full md:h-[60px] sm:w-full md:w-[768px] lg:w-[1024px] xl:w-full xxl:w-full sticky  top-0 bg-white">
       <div className="flex ustify-between md:gap-1 md:pr-5 xl:pl-40 xl:pr-40 xxl:px-10 md:justify-between lg:justify-between xl:justify-between w-full xxl:justify-evenly">
         <div className="flex gap-3">
           <img

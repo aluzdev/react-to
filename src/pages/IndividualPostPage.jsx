@@ -25,7 +25,7 @@ export const IndividualPostPage = () => {
 
       <main
         id="ContenerPrincipal"
-        className="flex w-2/3 p-4 md:pt-0 mx-auto justify-center gap-6 md:justify-evenly xxl:w-60"
+        className="flex w-2/3 p-4 md:pt-0 mx-auto justify-center gap-6 md:justify-evenlyn xl:w-[1440px] xxl:w-60"
       >
         <div
           id="ContenedorReacciones"
