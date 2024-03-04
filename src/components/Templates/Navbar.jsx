@@ -25,8 +25,6 @@ export const Navbar = ({ setSearchBar, posts, setFilteredPosts }) => {
               onChange={(e) => {
                 const searchQuery = e.target.value;
                 setSearchBar(searchQuery);
-                //ese estado contiene el query
-                //debo usar ese query para filtrar la variable posts
                 const filteredPosts = posts.filter((post) =>
                   post.title.toLowerCase().includes(searchQuery)
                 );
