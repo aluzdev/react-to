@@ -27,7 +27,7 @@ import {
 export const CardCenter = () => {
   return (
     <>
-      <div className="bg-white rounded-lg mb-2 md:w-[531.44px]">
+      <div className="bg-white rounded-lg mb-2 md:w-[531.44px] xl:w-[650px]">
         <img
           src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffftdkjmm99z06bu2qggi.gif"
           alt=""

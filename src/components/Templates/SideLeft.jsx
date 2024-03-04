@@ -23,7 +23,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 export const SideLeft = () => {
   return (
-    <aside className=" hidden md:w-[212.56px] md:h-[346px] md:ml-2 md:pt-[4px] md:pr-[10px] md:ml-3 md:block xl:w-[16rem] xl:ml-0 xl:block ">
+    <aside className=" hidden md:w-[212.56px] md:h-[346px] lg:w-[240px] md:ml-2 md:pt-[4px] md:pr-[10px] md:ml-3 md:block xl:w-[16rem] xl:ml-0 xl:block ">
       <div className="bg-slate-50 rounded-lg md:m-0 md:w[212.56px] md:h[346px] p-[10px]">
         <h2 className="font-bold text-left">
           DEV Community is a community of 1,287,199 amazing developers
