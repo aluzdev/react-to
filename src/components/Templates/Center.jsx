@@ -178,9 +178,32 @@ export const Center = () => {
         </div>
       </div>
 
-      {filteredPosts.map((post) => (
-        <CardCenter key={post.id} post={post} />
-      ))}
+      {filteredPosts.map(
+        ({
+          _id,
+          author,
+          title,
+          reactions,
+          tags,
+          coverImage,
+          createdAt,
+          comments,
+          readingTime,
+        }) => (
+          <CardCenter
+            key={_id}
+            _id={_id}
+            author={author}
+            comments={comments}
+            coverImage={coverImage}
+            createdAt={createdAt}
+            reactions={reactions}
+            readingTime={readingTime}
+            tags={tags}
+            title={title}
+          />
+        )
+      )}
     </div>
   );
 };
