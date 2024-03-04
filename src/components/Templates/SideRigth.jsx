@@ -42,8 +42,8 @@ export const SideRigth = ({ tagsToFilterBy }) => {
   }, [tagsToFilterBy]);
   return (
     <>
-      <aside className="hidden xl:w-[21rem] xl:block">
-        <div className="divide-y divide-gray-300 bg-slate-50 w-[20.5rem] rounded-md">
+      <aside className="hidden lg:block lg:w-[240px] md:pt-[4px] xl:w-[325px] lg:pl-2 xl:pl-0 xl:block">
+        <div className="divide-y divide-gray-300 bg-slate-50 lg:w-[240px] lg:pl-2 xl:w-[325px] xl:ml-0 rounded-md">
           <Button type="rigth_sidebar">
             <p className="text-xl font-semibold">
               {filteredPosts
@@ -60,7 +60,7 @@ export const SideRigth = ({ tagsToFilterBy }) => {
               .map((post, index) => <SideBarButton key={index} post={post} />)}
         </div>
         <br />
-        <div className="divide-y divide-gray-300 bg-slate-50 w-[20rem] rounded-md">
+        <div className="divide-y divide-gray-300 bg-slate-50 lg:w-[240px] lg:pl-2 xl:w-[325px] xl:ml-0 rounded-md">
           <Button type="rigth_sidebar">
             <p className="text-xl font-semibold">
               {filteredPosts
