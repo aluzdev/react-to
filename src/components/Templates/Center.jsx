@@ -1,24 +1,16 @@
-import { useState, useEffect } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import { Button } from "../elements/Button";
 import { CardCenter } from "../elements/CardCenter";
 
-export const Center = () => {
-  const [posts, setPosts] = useState([]);
-  const [filteredPosts, setFilteredPosts] = useState([]);
+export const Center = ({
+  posts,
+  searchBar,
+  filteredPosts,
+  setFilteredPosts,
+}) => {
   const [filterType, setFilterType] = useState("Relevant");
   const [showAdditionalB, setShowAdditionalB] = useState(false);
-
-  useEffect(() => {
-    // Me traigo los posts de la API
-    fetch("https://dev-to-backend-dev-sxgk.2.us-1.fl0.io/posts")
-      .then((response) => response.json())
-      .then((data) => {
-        setPosts(data);
-        // Muestro todos los posts
-        setFilteredPosts(data);
-      })
-      .catch((error) => console.error("Error al obtener los posts:", error));
-  }, []);
 
   const handleFilterClick = (type) => {
     // Verifico si se hizo clic en el botón Destacados
@@ -178,32 +170,59 @@ export const Center = () => {
         </div>
       </div>
 
-      {filteredPosts.map(
-        ({
-          _id,
-          author,
-          title,
-          reactions,
-          tags,
-          coverImage,
-          createdAt,
-          comments,
-          readingTime,
-        }) => (
-          <CardCenter
-            key={_id}
-            _id={_id}
-            author={author}
-            comments={comments}
-            coverImage={coverImage}
-            createdAt={createdAt}
-            reactions={reactions}
-            readingTime={readingTime}
-            tags={tags}
-            title={title}
-          />
-        )
-      )}
+      {!searchBar
+        ? posts.map(
+            ({
+              _id,
+              author,
+              title,
+              reactions,
+              tags,
+              coverImage,
+              createdAt,
+              comments,
+              readingTime,
+            }) => (
+              <CardCenter
+                key={_id}
+                _id={_id}
+                author={author}
+                comments={comments}
+                coverImage={coverImage}
+                createdAt={createdAt}
+                reactions={reactions}
+                readingTime={readingTime}
+                tags={tags}
+                title={title}
+              />
+            )
+          )
+        : filteredPosts.map(
+            ({
+              _id,
+              author,
+              title,
+              reactions,
+              tags,
+              coverImage,
+              createdAt,
+              comments,
+              readingTime,
+            }) => (
+              <CardCenter
+                key={_id}
+                _id={_id}
+                author={author}
+                comments={comments}
+                coverImage={coverImage}
+                createdAt={createdAt}
+                reactions={reactions}
+                readingTime={readingTime}
+                tags={tags}
+                title={title}
+              />
+            )
+          )}
     </div>
   );
 };
