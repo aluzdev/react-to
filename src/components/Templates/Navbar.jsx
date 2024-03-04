@@ -16,9 +16,9 @@ export const Navbar = ({ setSearchBar, posts, setFilteredPosts }) => {
             className="w-[50px] w-[40px]"
           />
 
-          <label className="relative text-center flex w-full md:w-[420px] lg:w-60 xl:w-72">
+          <label className="relative text-center flex w-full md:w-[420px] xl:w-[420px]  lg:w-60 xl:w-72">
             <input
-              className=" block bg-white w-full border border-slate-300 md:w-[420px] rounded-md py-2 px-3 shadow-sm focus:outline-none focus:border-black text-sm "
+              className=" block bg-white w-full border border-slate-300 md:w-[420px] rounded-md py-2 px-3 xl:w-[420px] shadow-sm focus:outline-none focus:border-black text-sm "
               placeholder="Search..."
               type="text"
               name="search"

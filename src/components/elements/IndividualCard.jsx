@@ -13,17 +13,20 @@ import {
 export const IndividualCard = ({ post }) => {
   return (
     <>
-      <div className="bg-white rounded-lg mb-2 md:w-[531.44px] xl:w-[650px]">
+      <div className="bg-white lg:rounded-lg sm:pt-0 sm:w-[425px] md:w-[531.44px] xl:w-[650px]">
         <img
           id="cover-image"
           src={post.coverImage}
-          className="rounded-lg cursor-pointer"
+          className="lg:rounded-lg cursor-pointer"
         />
         <div
           id="contenedor-principal"
-          className="w-full px-2 flex justify-center justify-items-center "
+          className="w-full px-2 sm:px-[30px] sm:ml-[10px] flex justify-center justify-items-center "
         >
-          <div id="contenedor-post" className="sm:pt-3 md:p-2 p-5  w-full">
+          <div
+            id="contenedor-post"
+            className="sm:pt-3 sm:w-[420px] md:p-2 p-2 w-full"
+          >
             <div id="avatar" className="flex sm:pl-0 pl-2 mb-4">
               <img
                 src={post.author?.image}
@@ -34,61 +37,47 @@ export const IndividualCard = ({ post }) => {
                 <p className="text-[12px]">{post.createdAt}</p>
               </div>
             </div>
-
-            <div id="Contenedor titulo post" className="sm:pl-0 pl-12">
-              <h3 className="text-xl font-bold cursor-pointer">{post.title}</h3>
-
-              <div
-                id="contenedor tags"
-                className="flex flex-wrap mb-3 sm:h-2 h-8 "
-              >
-                {post.tags?.map((tag, index) => (
-                  <Button key={`${post._id}-${index}`} type="tag">
-                    {tag}
+            <div className="flex flex-col sm:pb-1">
+              <div className="flex text-sm content-center hover:bg-grayButton sm:pl-0 rounded-lg sm:pb-1">
+                <div className="flex flex-row">
+                  <Button>
+                    <Heart></Heart>
                   </Button>
-                ))}
+                  <Button type="reaction">
+                    <Unicornio></Unicornio>
+                  </Button>
+                  <Button type="reaction">
+                    <Blowmind></Blowmind>
+                  </Button>
+                  <Button type="reaction">
+                    <Fire></Fire>
+                  </Button>
+                </div>
+                <p id="numero de reacciones" className="self-center">
+                  {post.reactions} reactions
+                </p>
               </div>
             </div>
+            <div id="Contenedor titulo post" className="sm:pl-0 pl-12 sm:pb-3">
+              <h2 className="text-3xl sm:pb-3 font-bold cursor-pointer">
+                {post.title}
+              </h2>
+            </div>
             <div
-              id="reactions"
+              id="contenedor tags"
+              className="flex flex-row mb-3 sm:h-2 h-8 sm:pb-10 "
+            >
+              {post.tags?.map((tag, index) => (
+                <Button key={`${post._id}-${index}`} type="tag">
+                  {tag}
+                </Button>
+              ))}
+            </div>
+            <div
+              id="emojis"
               className="flex shrink md:justify-between xl: justify-between px-0"
             >
-              <div className="flex flex-row">
-                <div className="flex text-sm content-center hover:bg-grayButton p-1.5 rounded-lg">
-                  <div className="flex flex-row">
-                    <Button>
-                      <Heart></Heart>
-                    </Button>
-                    <Button type="reaction">
-                      <Unicornio></Unicornio>
-                    </Button>
-                    <Button type="reaction">
-                      <Blowmind></Blowmind>
-                    </Button>
-                    <Button type="reaction">
-                      <Fire></Fire>
-                    </Button>
-                  </div>
-                  <p id="numero de reacciones" className="self-center">
-                    {post.reactions} reactions
-                  </p>
-                </div>
-                <div className="flex flex-row py-6 text-sm">
-                  <Button type="actions">
-                    <Comentario></Comentario>
-                    <p id="numero comentarios" className="pr-2 self-center">
-                      {post.comments} comments
-                    </p>
-                  </Button>
-                </div>
-              </div>
               <div id="contenedor bookmarks" className="flex flex-row">
-                <div className="flex text-sm">
-                  <p className="pr-2 self-center">{post.readingTime} minutes</p>
-                  <Button type="actions">
-                    <Bookmark></Bookmark>
-                  </Button>
-                </div>
                 <div
                   id="contenedor-de-contenido"
                   className="flex flex-col text-center"

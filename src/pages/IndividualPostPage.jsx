@@ -71,7 +71,7 @@ export const IndividualPostPage = () => {
             <div className="bg-slate-50 p-3">
               <div>
                 <div className="flex">
-                  <img id="Author Image" src={post.author.image} alt="" />
+                  <img id="Author Image" src="/vite.svg" alt="" />
                   <p id="Author Name" className="ml-3">
                     {post?.author?.name}
                   </p>

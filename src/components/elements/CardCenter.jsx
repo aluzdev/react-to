@@ -19,7 +19,7 @@ export const CardCenter = (props) => {
 
   return (
     <>
-      <div className="bg-white rounded-lg mb-2 md:w-[531.44px] xl:w-[650px]">
+      <div className="bg-white rounded-lg mb-2 md:w-[531.44px] lg:mr-2 lg:w-[480px] xl:w-[650px]">
         <img
           id="cover-image"
           src={props.coverImage}
