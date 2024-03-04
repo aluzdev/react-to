@@ -94,23 +94,21 @@ export const Center = ({
   };
 
   return (
-    <div className="w-full md:w-[40rem] mx-auto px-4">
-    <div className="my-3 flex flex-col md:flex-row md:justify-between">
-      <div className="mb-2 md:mb-0">
+    <div className="md:w-[531px] lg:w-[480px] lg:pr-0 xl:pr-0 xl:w-[650px]">
+      <div className="my-3 flex justify-between">
+        <div>
           <Button
             type="filter"
             onClick={() => handleFilterClick("Relevant")}
             className={filterType === "Relevant" ? "font-bold" : ""}
           >
-            {" "}
-            Relevant
+            Relevants
           </Button>
           <Button
             type="filter"
             onClick={() => handleFilterClick("Lastest")}
             className={filterType === "Lastest" ? "font-bold" : ""}
           >
-            {" "}
             Latest
           </Button>
           <Button
