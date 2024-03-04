@@ -1,18 +1,21 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import { Button } from "../elements/Button";
 import { API_URL } from "../../api";
 
-const sideBarButton = () => {
+const SideBarButton = ({ post }) => {
+  // Corrected component name
+  console.log({ post });
   return (
     <Button type="rigth_sidebar">
-      <p>Psst... I can build this in a weekend!</p>
-      <p className="text-gray-500 text-[.9rem]">10 comments</p>
+      <p>{post.title}</p>
+      <p className="text-gray-500 text-[.9rem]">{post.comments} comments</p>
     </Button>
   );
 };
 
 export const SideRigth = ({ tagsToFilterBy }) => {
-  const [filteredPosts, setFilteredPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -43,34 +46,18 @@ export const SideRigth = ({ tagsToFilterBy }) => {
         <div className="divide-y divide-gray-300 bg-slate-50 w-[20.5rem] rounded-md">
           <Button type="rigth_sidebar">
             <p className="text-xl font-semibold">
-              {Object.keys(filteredPosts[0]).toString()}
+              {filteredPosts
+                ? Object.keys(filteredPosts[0])?.toString()
+                : "#webDev"}
             </p>
             <p className="text-gray-500 text-xs">
               Discussion threads targeting the whole community
             </p>
           </Button>
-          <Button type="rigth_sidebar">
-            <p>Whitehouse Declares Software Should Be Memory Safe</p>
-            <p className="text-gray-500 text-[.9rem]">5 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Are You Embracing AI in Your Dev Workflow?</p>
-            <p className="text-gray-500 text-[.9rem]">5 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>
-              Explain "Memory Safe Programming Languages" Like I'm Five Please
-            </p>
-            <p className="text-gray-500 text-[.9rem]">8 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Mentor Matching — February 2024 🤝</p>
-            <p className="text-gray-500 text-[.9rem]">3 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Psst... I can build this in a weekend!</p>
-            <p className="text-gray-500 text-[.9rem]">10 comments</p>
-          </Button>
+          {filteredPosts &&
+            Object.values(filteredPosts[0])
+              .flat()
+              .map((post, index) => <SideBarButton key={index} post={post} />)}
         </div>
         <br />
         <div className="divide-y divide-gray-300 bg-slate-50 w-[20rem] rounded-md">
@@ -80,28 +67,10 @@ export const SideRigth = ({ tagsToFilterBy }) => {
               Discussion threads targeting the whole community
             </p>
           </Button>
-          <Button type="rigth_sidebar">
-            <p>Whitehouse Declares Software Should Be Memory Safe</p>
-            <p className="text-gray-500 text-[.9rem]">5 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Are You Embracing AI in Your Dev Workflow?</p>
-            <p className="text-gray-500 text-[.9rem]">5 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>
-              Explain "Memory Safe Programming Languages" Like I'm Five Please
-            </p>
-            <p className="text-gray-500 text-[.9rem]">8 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Mentor Matching — February 2024 🤝</p>
-            <p className="text-gray-500 text-[.9rem]">3 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Psst... I can build this in a weekend!</p>
-            <p className="text-gray-500 text-[.9rem]">10 comments</p>
-          </Button>
+          {filteredPosts &&
+            Object.values(filteredPosts[1])
+              .flat()
+              .map((post, index) => <SideBarButton key={index} post={post} />)}
         </div>
       </aside>
     </>
