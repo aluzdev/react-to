@@ -17,7 +17,8 @@ export const HomePage = () => {
         setPosts(data);
       })
       .catch((error) => console.error("Error al obtener los posts:", error));
-  }, []);
+  }, [posts]);
+
   return (
     <>
       <Navbar
