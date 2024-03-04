@@ -13,7 +13,7 @@ export const IndividualPostPage = () => {
   useEffect(() => {
     async function loadData() {
       const resp = await postById(params.id);
-      setPost(resp);
+      setPost(resp.data.post);
     }
     loadData();
   }, []);
