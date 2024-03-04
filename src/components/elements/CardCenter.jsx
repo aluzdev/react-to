@@ -1,22 +1,6 @@
+/* eslint-disable react/prop-types */
 import { Button } from "./Button";
 import {
-  Home,
-  Microphone,
-  Camera,
-  Tag,
-  Idea,
-  Bag,
-  Estrellas,
-  Contact,
-  Conduct,
-  Privacy,
-  Terms,
-  TwitterBN,
-  Github,
-  Instagram,
-  Twitch,
-  Mastodon,
-  Facebook,
   Heart,
   Comentario,
   Unicornio,
@@ -24,46 +8,52 @@ import {
   Fire,
   Bookmark,
 } from "../../icons/";
-export const CardCenter = () => {
+
+export const CardCenter = ({
+  _id,
+  author,
+  title,
+  reactions,
+  tags,
+  coverImage,
+  createdAt,
+  comments,
+  readingTime,
+}) => {
   return (
     <>
       <div className="bg-slate-100 rounded-lg mb-6 h-auto">
-        <img
-          src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffftdkjmm99z06bu2qggi.gif"
-          alt=""
-          className="rounded-lg"
-        />
+        <img id="cover-image" src={coverImage} alt="" className="rounded-lg" />
         <div
-          id="Contenedro Principal"
+          id="contenedor-principal"
           className="w-full px-2 flex justify-center justify-items-center "
         >
-          <div id="contenedorPost" className="p-5  w-full">
-            <div className="flex pl-2 mb-4">
+          <div id="contenedor-post" className="p-5  w-full">
+            <div id="avatar" className="flex pl-2 mb-4">
               <img
-                src="/vite.svg"
+                src={author.image}
                 alt=""
                 className="rounded-full w-10 border-[1px] border-black"
               />
               <div className="pl-3 flex flex-col  gap-0">
-                <p className="text-[14px]">Michael Tharrington</p>
-                <p className="text-[12px]">Feb 27</p>
+                <p className="text-[14px]">{author.name}</p>
+                <p className="text-[12px]">{createdAt}</p>
               </div>
             </div>
 
             <div id="Contenedor titulo post" className="pl-12">
-              <h3 className="text-xl font-bold">
-                Mentor Matching — February 2024 🤝
-              </h3>
+              <h3 className="text-xl font-bold">{title}</h3>
 
               <div id="contenedor tags" className="flex flex-wrap mb-3 h-8 ">
-                <Button type="tags">#discuss</Button>
-                <Button type="tags">#mentorship</Button>
-                <Button type="tags">#community</Button>
-                <Button type="tags">#career</Button>
+                {tags.map((tag) => (
+                  <Button key={_id} type="tag">
+                    {tag}
+                  </Button>
+                ))}
               </div>
             </div>
             <div
-              id="contenedor reactions"
+              id="reactions"
               className="flex shrink md:justify-between xl: justify-between px-0"
             >
               <div className="flex flex-row">
@@ -83,22 +73,21 @@ export const CardCenter = () => {
                     </Button>
                   </div>
                   <p id="numero de reacciones" className="self-center">
-                    27 reactions
+                    {reactions} reactions
                   </p>
                 </div>
                 <div className="flex flex-row py-6 text-sm">
                   <Button type="actions">
                     <Comentario></Comentario>
                     <p id="numero comentarios" className="pr-2 self-center">
-                      {" "}
-                      3 comments
+                      {comments} comments
                     </p>
                   </Button>
                 </div>
               </div>
               <div id="contenedor bookmarks" className="flex flex-row">
                 <div className="flex text-sm">
-                  <p className="pr-2 self-center"> 17 min read</p>
+                  <p className="pr-2 self-center">{readingTime} minutes</p>
                   <Button type="actions">
                     <Bookmark></Bookmark>
                   </Button>
