@@ -44,13 +44,18 @@ export const Navbar = ({ setSearchBar, posts, setFilteredPosts }) => {
                   <Link to="/login">Log in</Link>
                 </span>
 
-                <Button type="create" width="nav">
+                <Button className="sm:block" type="create" width="nav">
                   <Link to="/register">Create account</Link>
                 </Button>
               </div>
             </div>
           ) : (
-            <Button type="create" width="nav" onClick={() => navigate("/new")}>
+            <Button
+              className="sm:block"
+              type="create"
+              width="nav"
+              onClick={() => navigate("/new")}
+            >
               Create post
             </Button>
           )}

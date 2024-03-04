@@ -28,7 +28,7 @@ export const HomePage = () => {
       />
       <main className=" bg-gray-100">
         <div
-          className="xl:gap-4 md:p-0 flex flex-row xl:justify-center justify-center  xl:p-3
+          className="gap-4 md:p-0 flex flex-row xl:justify-center justify-center  xl:p-3
          md:pr-2"
         >
           <SideLeft />
