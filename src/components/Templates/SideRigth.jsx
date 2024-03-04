@@ -62,7 +62,11 @@ export const SideRigth = ({ tagsToFilterBy }) => {
         <br />
         <div className="divide-y divide-gray-300 bg-slate-50 w-[20rem] rounded-md">
           <Button type="rigth_sidebar">
-            <p className="text-xl font-semibold"> #discuss</p>
+            <p className="text-xl font-semibold">
+              {filteredPosts
+                ? Object.keys(filteredPosts[1])?.toString()
+                : "#beginner"}
+            </p>
             <p className="text-gray-500 text-xs">
               Discussion threads targeting the whole community
             </p>
