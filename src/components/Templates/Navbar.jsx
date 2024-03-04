@@ -2,7 +2,7 @@ import { Search } from "../../icons";
 import { Button } from "../elements/Button";
 import { Link, useNavigate } from "react-router-dom";
 
-export const Navbar = () => {
+export const Navbar = ({ setSearch }) => {
   const isLoggedIn = localStorage.getItem("token");
   const navigate = useNavigate();
   return (
@@ -21,6 +21,7 @@ export const Navbar = () => {
               placeholder="Search..."
               type="text"
               name="search"
+              onChange={(e) => setSearch(e.target.value)}
             />
             <span className="absolute inset-y-0 right-0 flex items-center pr-2 ">
               <Search />

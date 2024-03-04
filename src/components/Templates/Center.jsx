@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "../elements/Button";
 import { CardCenter } from "../elements/CardCenter";
 
-export const Center = () => {
+export const Center = ({ searchBar }) => {
   const [posts, setPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [filterType, setFilterType] = useState("Relevant");
