@@ -14,7 +14,11 @@ export const IndividualCard = ({ post }) => {
   return (
     <>
       <div className="bg-white rounded-lg mb-2 md:w-[531.44px] xl:w-[650px]">
-        <img id="cover-image" src="" className="rounded-lg cursor-pointer" />
+        <img
+          id="cover-image"
+          src={post.coverImage}
+          className="rounded-lg cursor-pointer"
+        />
         <div
           id="contenedor-principal"
           className="w-full px-2 flex justify-center justify-items-center "
@@ -84,9 +88,14 @@ export const IndividualCard = ({ post }) => {
                   <Button type="actions">
                     <Bookmark></Bookmark>
                   </Button>
-                  <div id="Contenedor Data content" className="">
-                    <p id="Data content">{post.content}</p>
-                  </div>
+                </div>
+                <div
+                  id="contenedor-de-contenido"
+                  className="flex flex-col text-center"
+                >
+                  <p id="Data content" className="text-justify">
+                    {post.content}
+                  </p>
                 </div>
               </div>
             </div>

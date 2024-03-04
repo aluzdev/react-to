@@ -42,7 +42,7 @@ export const IndividualPostPage = () => {
                 <button className="flex-col mt-10">
                   <Comentario></Comentario>
                   <p id="numeroDeComentarios" className=" text-center">
-                    3
+                    {post.comments}
                   </p>
                 </button>
               </div>
@@ -50,7 +50,7 @@ export const IndividualPostPage = () => {
                 <button>
                   <Bookmark></Bookmark>
                   <p id="numeroDeBookmarks" className="pr-2 text-center">
-                    235
+                    {post.readingTime}
                   </p>
                 </button>
               </div>
@@ -71,9 +71,9 @@ export const IndividualPostPage = () => {
             <div className="bg-slate-50 p-3">
               <div>
                 <div className="flex">
-                  <img id="Author Image" src="/vite.svg" alt="" />
+                  <img id="Author Image" src={post.author.image} alt="" />
                   <p id="Author Name" className="ml-3">
-                    ALicia Marianne
+                    {post?.author?.name}
                   </p>
                 </div>
                 <br />
@@ -99,7 +99,7 @@ export const IndividualPostPage = () => {
                   </li>
                   <li>
                     <p>WORK</p>
-                    <p>QA Engineer at Enhesa</p>
+                    <p>Software Engineer @ Kodemi</p>
                   </li>
                   <li>
                     <p>JOINED</p>
