@@ -103,7 +103,7 @@ export const Center = ({
             className={filterType === "Relevant" ? "font-bold" : ""}
           >
             {" "}
-            Relevantes
+            Relevant
           </Button>
           <Button
             type="filter"
@@ -111,7 +111,7 @@ export const Center = ({
             className={filterType === "Lastest" ? "font-bold" : ""}
           >
             {" "}
-            Últimos
+            Latest
           </Button>
           <Button
             type="filter"
@@ -126,7 +126,7 @@ export const Center = ({
                 : ""
             }
           >
-            Destacados
+            Top
           </Button>
         </div>
 
@@ -142,28 +142,28 @@ export const Center = ({
                     : ""
                 }
               >
-                Semana
+                Week
               </Button>
               <Button
                 type="filter"
                 onClick={() => handleFilterClick("Month")}
                 className={filterType === "Month" ? "font-bold" : ""}
               >
-                Mes
+                Month
               </Button>
               <Button
                 type="filter"
                 onClick={() => handleFilterClick("Year")}
                 className={filterType === "Year" ? "font-bold" : ""}
               >
-                Año
+                Year
               </Button>
               <Button
                 type="filter"
                 onClick={() => handleFilterClick("Infinity")}
                 className={filterType === "Infinity" ? "font-bold" : ""}
               >
-                Infinito
+                Infinity
               </Button>
             </>
           )}
