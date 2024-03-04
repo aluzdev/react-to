@@ -34,7 +34,7 @@ export const CardCenter = (props) => {
             <div id="avatar" className="flex sm:pl-0 pl-2 mb-4">
               <img
                 src={props.author?.image}
-                className="rounded-full w-10 border-[1px] border-black"
+                className="rounded-full w-10 h-10 border-[1px] border-black"
               />
               <div className="pl-3 flex flex-col  gap-0">
                 <p className="text-[14px]">{props.author?.name}</p>

@@ -31,7 +31,7 @@ export const IndividualCard = ({ post }) => {
               <div id="avatar" className="flex sm:pl-0 pl-2 mb-4">
                 <img
                   src={post.author?.image}
-                  className="rounded-full w-10 border-[1px] border-black"
+                  className="rounded-full w-10 h-10 border-[1px] border-black"
                 />
                 <div className="pl-3 flex flex-col  gap-0">
                   <p className="text-[14px]">{post.author?.name}</p>
