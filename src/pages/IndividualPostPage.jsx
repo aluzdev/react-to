@@ -1,8 +1,24 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { Button } from "../components/elements/Button";
 import { Navbar } from "../components/Templates/Navbar";
 import { Comentario, Heart, BlackHeart, Bookmark } from "../icons";
 import { CardCenter } from "../components/elements/CardCenter";
+import { postById } from "../api";
+
 export const IndividualPostPage = () => {
+  const params = useParams();
+  const [post, setPost] = useState({});
+
+  useEffect(() => {
+    async function loadData() {
+      const resp = await postById(params.id);
+      setPost(resp);
+    }
+    loadData();
+  }, []);
+
+  console.log(post);
   return (
     <>
       <Navbar />

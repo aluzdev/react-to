@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import { Apple, Forem, Github, Twitter } from "../icons";
-import { useState } from "react";
-import { loginRequest } from "../api";
+import { registerRequest } from "../api";
 import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
@@ -11,11 +10,12 @@ export const Register = () => {
     formState: { errors },
   } = useForm();
   const navigate = useNavigate();
+
   const onSubmit = handleSubmit(async (userData) => {
-    const response = await loginRequest(userData);
+    const response = await registerRequest(userData);
     console.log(response);
-    localStorage.setItem("token", response.data);
-    navigate("/");
+
+    navigate("/login");
   });
 
   return (
@@ -25,10 +25,8 @@ export const Register = () => {
           <a>
             <div className="object-contain w-16 h-12 mt-8">
               <img
-                className=""
                 src="https://dev-to-uploads.s3.amazonaws.com/uploads/logos/original_logo_0DliJcfsTcciZen38gX9.png"
                 alt="logo"
-                class="logInLogo"
               />
             </div>
           </a>
@@ -78,59 +76,76 @@ export const Register = () => {
           <div id="register" className="w-7/12 mt-10">
             <form
               className="flex items-left justify-items-left flex-col"
-              onSubmit={onSubmit}
-            >
-              <label>Email</label>
+              onSubmit={onSubmit}>
+              <label className="pl-3 mt-4 ">Nombre</label>
               <input
-                className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-4 px-2"
+                className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-1 pl-3"
+                type="text"
+                placeholder="Nombre"
+                name="name"
+                {...register("name", { required: true })}
+              />
+              {errors.name && <span>El campo es requerido</span>}
+              <label className="pl-3 mt-4 ">Email</label>
+              <input
+                className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-1 pl-3"
                 type="email"
-                placeholder="email"
+                placeholder="Email"
                 name="email"
-                {...register("email")}
+                {...register("email", { required: true })}
               />
-              <br />
-              <label>Password</label>
+              {errors.email && <span>El campo es requerido</span>}
+
+              <label className="pl-3 mt-4 ">Password</label>
               <input
-                className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-4 px-2"
+                className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-1 pl-3"
                 type="password"
-                placeholder="password"
+                placeholder="Password"
                 name="password"
-                {...register("password")}
+                {...register("password", { required: true })}
               />
+              {errors.password && <span>El campo es requerido</span>}
+
+              <label className="pl-3 mt-4 ">Imagen</label>
+              <input
+                className="bg-transparent border border-neutral-300 gap-1 rounded-md  h-9 mt-1 pl-3"
+                type="text"
+                placeholder="https://picsum.photos/id/237/200/300"
+                name="image"
+                {...register("image", { required: true })}
+              />
+              {errors.image && <span>El campo es requerido</span>}
+
               <button className="flex items-center justify-center w-full h-12 bg-blueButton hover:bg-blue-800 border border-neutral-300 mx-auto mt-4 rounded-md">
-                <span className="text-white">Sing Up</span>
+                <span className="text-white">Register</span>
               </button>
-              <div className="w-full gap-1 flex justify-center my-8">
-                <span className="text-gray-600 w-9/12 text-sm italic antialiased font-light text-center">
-                  By signing in, you are agreeing to our
-                  <a className="text-blueButton" href="https://dev.to/privacy">
-                    privacy policy
-                  </a>
-                  ,
-                  <a className="text-blueButton" href="https://dev.to/terms">
-                    terms of use
-                  </a>
-                  and
-                  <a
-                    className="text-blueButton"
-                    href="https://dev.to/code-of-conduct"
-                  >
-                    code of conduct.
-                  </a>
-                </span>
-              </div>
-              <div className="w-full gap-1 flex justify-center mt-6 mb-20">
-                <span className="font-light">
-                  Already have an account?
-                  <a
-                    className="text-blueButton"
-                    href="https://dev.to/enter?state=new-user"
-                  >
-                    Log in.
-                  </a>
-                </span>
-              </div>
             </form>
+            <div className="w-full gap-1 flex justify-center my-8">
+              <span className="text-gray-600 w-9/12 text-sm italic antialiased font-light text-center">
+                By signing in, you are agreeing to our
+                <a className="text-blueButton" href="https://dev.to/privacy">
+                  privacy policy
+                </a>
+                ,
+                <a className="text-blueButton" href="https://dev.to/terms">
+                  terms of use
+                </a>
+                and
+                <a
+                  className="text-blueButton"
+                  href="https://dev.to/code-of-conduct">
+                  code of conduct.
+                </a>
+              </span>
+            </div>
+            <div className="w-full gap-1 flex justify-center mt-3 mb-20">
+              <span className="font-light mr-6">Already have an account</span>
+              <div
+                className="text-blueButton cursor-pointer"
+                onClick={() => navigate("/login")}>
+                Log in.
+              </div>
+            </div>
           </div>
         </div>
       </div>

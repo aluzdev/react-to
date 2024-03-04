@@ -14,7 +14,7 @@ function App() {
         <Route path="/new" element={<Form />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
-        <Route path="/post" element={<IndividualPostPage />}></Route>
+        <Route path="/posts/:id" element={<IndividualPostPage />}></Route>
       </Routes>
     </>
   );

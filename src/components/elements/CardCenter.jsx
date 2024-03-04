@@ -1,22 +1,7 @@
+/* eslint-disable react/prop-types */
+import { useNavigate } from "react-router-dom";
 import { Button } from "./Button";
 import {
-  Home,
-  Microphone,
-  Camera,
-  Tag,
-  Idea,
-  Bag,
-  Estrellas,
-  Contact,
-  Conduct,
-  Privacy,
-  Terms,
-  TwitterBN,
-  Github,
-  Instagram,
-  Twitch,
-  Mastodon,
-  Facebook,
   Heart,
   Comentario,
   Unicornio,
@@ -24,49 +9,60 @@ import {
   Fire,
   Bookmark,
 } from "../../icons/";
-export const CardCenter = () => {
+
+export const CardCenter = (props) => {
+  const navigate = useNavigate();
+
+  const onClick = async () => {
+    navigate(`posts/${props._id}`);
+  };
+
   return (
     <>
       <div className="bg-white rounded-lg mb-2 md:w-[531.44px] xl:w-[650px]">
         <img
-          src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffftdkjmm99z06bu2qggi.gif"
-          alt=""
-          className="xl:rounded-lg object-contain"
+          id="cover-image"
+          src={props.coverImage}
+          className="rounded-lg cursor-pointer"
+          onClick={onClick}
         />
         <div
-          id="Contenedro Principal"
+          id="contenedor-principal"
           className="w-full px-2 flex justify-center justify-items-center "
         >
-          <div id="contenedorPost" className="sm:pt-3 md:p-2 p-5  w-full">
-            <div className="flex sm:pl-0 pl-2 mb-4">
+          <div id="contenedor-post" className="sm:pt-3 md:p-2 p-5  w-full">
+            <div id="avatar" className="flex sm:pl-0 pl-2 mb-4">
               <img
-                src="/vite.svg"
-                alt=""
+                src={props.author?.image}
                 className="rounded-full w-10 border-[1px] border-black"
               />
               <div className="pl-3 flex flex-col  gap-0">
-                <p className="text-[14px]">Michael Tharrington</p>
-                <p className="text-[12px]">Feb 27</p>
+                <p className="text-[14px]">{props.author?.name}</p>
+                <p className="text-[12px]">{props.createdAt}</p>
               </div>
             </div>
 
             <div id="Contenedor titulo post" className="sm:pl-0 pl-12">
-              <h3 className="text-xl font-bold">
-                Mentor Matching — February 2024 🤝
+              <h3
+                className="text-xl font-bold cursor-pointer"
+                onClick={onClick}
+              >
+                {props.title}
               </h3>
 
               <div
                 id="contenedor tags"
                 className="flex flex-wrap mb-3 sm:h-2 h-8 "
               >
-                <Button type="tags">#discuss</Button>
-                <Button type="tags">#mentorship</Button>
-                <Button type="tags">#community</Button>
-                <Button type="tags">#career</Button>
+                {props.tags?.map((tag, index) => (
+                  <Button key={`${props._id}-${index}`} type="tag">
+                    {tag}
+                  </Button>
+                ))}
               </div>
             </div>
             <div
-              id="contenedor reactions"
+              id="reactions"
               className="flex shrink md:justify-between xl: justify-between px-0"
             >
               <div className="flex flex-row">
@@ -86,22 +82,23 @@ export const CardCenter = () => {
                     </Button>
                   </div>
                   <p id="numero de reacciones" className="self-center">
-                    27 reactions
+                    {props.reactions} reactions
                   </p>
                 </div>
                 <div className="flex flex-row py-6 text-sm">
                   <Button type="actions">
                     <Comentario></Comentario>
                     <p id="numero comentarios" className="pr-2 self-center">
-                      {" "}
-                      3 comments
+                      {props.comments} comments
                     </p>
                   </Button>
                 </div>
               </div>
               <div id="contenedor bookmarks" className="flex flex-row">
                 <div className="flex text-sm">
-                  <p className="pr-2 self-center"> 17 min read</p>
+                  <p className="pr-2 self-center">
+                    {props.readingTime} minutes
+                  </p>
                   <Button type="actions">
                     <Bookmark></Bookmark>
                   </Button>
