@@ -4,6 +4,7 @@ import { FormBody } from "../components/elements/FormBody";
 import { FormNavbarTop } from "../components/elements/FormNavbarTop";
 import { FormNavbarBot } from "../components/elements/FormNavbarBot";
 import "../custom-styles.css";
+
 import { useNavigate } from "react-router-dom";
 import { API_URL } from "../api";
 
@@ -47,13 +48,14 @@ export const Form = () => {
     navigate("/");
   };
   return (
-    <form
-      className="grid-custom min-h-[840px] h-dvh"
-      onSubmit={handleSubmit(onSubmit)}
-    >
-      <FormNavbarTop />
-      <FormBody register={register} errors={errors} />
-      <FormNavbarBot />
-    </form>
+    <div className=" bg-neutral-200">
+      <form
+        className="grid-custom min-h-[840px] h-dvh"
+        onSubmit={handleSubmit(onSubmit)}>
+        <FormNavbarTop />
+        <FormBody register={register} errors={errors} />
+        {/* faBold */}
+      </form>
+    </div>
   );
 };
