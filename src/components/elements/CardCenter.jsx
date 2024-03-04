@@ -27,18 +27,18 @@ import {
 export const CardCenter = () => {
   return (
     <>
-      <div className="bg-slate-100 rounded-lg mb-6 h-auto">
+      <div className="bg-white rounded-lg mb-2 md:w-[531.44px]">
         <img
           src="https://media.dev.to/cdn-cgi/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Ffftdkjmm99z06bu2qggi.gif"
           alt=""
-          className="rounded-lg"
+          className="xl:rounded-lg object-contain"
         />
         <div
           id="Contenedro Principal"
           className="w-full px-2 flex justify-center justify-items-center "
         >
-          <div id="contenedorPost" className="p-5  w-full">
-            <div className="flex pl-2 mb-4">
+          <div id="contenedorPost" className="sm:pt-3 md:p-2 p-5  w-full">
+            <div className="flex sm:pl-0 pl-2 mb-4">
               <img
                 src="/vite.svg"
                 alt=""
@@ -50,12 +50,15 @@ export const CardCenter = () => {
               </div>
             </div>
 
-            <div id="Contenedor titulo post" className="pl-12">
+            <div id="Contenedor titulo post" className="sm:pl-0 pl-12">
               <h3 className="text-xl font-bold">
                 Mentor Matching — February 2024 🤝
               </h3>
 
-              <div id="contenedor tags" className="flex flex-wrap mb-3 h-8 ">
+              <div
+                id="contenedor tags"
+                className="flex flex-wrap mb-3 sm:h-2 h-8 "
+              >
                 <Button type="tags">#discuss</Button>
                 <Button type="tags">#mentorship</Button>
                 <Button type="tags">#community</Button>

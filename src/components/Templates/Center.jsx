@@ -3,8 +3,8 @@ import { CardCenter } from "../elements/CardCenter";
 
 export const Center = () => {
   return (
-    <div className="w-4/5 md:w-4/5 md:mx-8 xl:w-[40rem] ">
-      <div className="my-3">
+    <div className="">
+      <div className="sm:w-[425px] md:font-light sm:h-[51px] md:w-[531.44px] md:pt-[10px] md:mt-[-10px] sm:mt-[-15px]">
         <Button type="filter">Relevant</Button>
         <Button type="filter">Latest</Button>
         <Button type="filter">Top</Button>
