@@ -26,8 +26,11 @@ export const HomePage = () => {
         posts={posts}
         setFilteredPosts={setFilteredPosts}
       />
-      <main className=" bg-gray-200 xl:gap-4 ">
-        <div className="xl:gap-4 flex flex-row justify-center mx-auto pt-5 xl:w-4/5">
+      <main className=" bg-gray-100">
+        <div
+          className="gap-4 md:p-0 flex flex-row xl:justify-center justify-center  xl:p-3
+         md:pr-2"
+        >
           <SideLeft />
           <Center
             posts={posts}

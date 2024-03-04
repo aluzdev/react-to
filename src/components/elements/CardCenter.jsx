@@ -19,7 +19,7 @@ export const CardCenter = (props) => {
 
   return (
     <>
-      <div className="bg-slate-100 rounded-lg mb-6 h-auto">
+      <div className="bg-white rounded-lg mb-2 md:w-[531.44px] lg:mr-2 lg:w-[480px] xl:w-[650px]">
         <img
           id="cover-image"
           src={props.coverImage}
@@ -30,11 +30,11 @@ export const CardCenter = (props) => {
           id="contenedor-principal"
           className="w-full px-2 flex justify-center justify-items-center "
         >
-          <div id="contenedor-post" className="p-5  w-full">
-            <div id="avatar" className="flex pl-2 mb-4">
+          <div id="contenedor-post" className="sm:pt-3 md:p-2 p-5  w-full">
+            <div id="avatar" className="flex sm:pl-0 pl-2 mb-4">
               <img
                 src={props.author?.image}
-                className="rounded-full w-10 border-[1px] border-black"
+                className="rounded-full w-10 h-10 border-[1px] border-black"
               />
               <div className="pl-3 flex flex-col  gap-0">
                 <p className="text-[14px]">{props.author?.name}</p>
@@ -42,7 +42,7 @@ export const CardCenter = (props) => {
               </div>
             </div>
 
-            <div id="Contenedor titulo post" className="pl-12">
+            <div id="Contenedor titulo post" className="sm:pl-0 pl-12">
               <h3
                 className="text-xl font-bold cursor-pointer"
                 onClick={onClick}
@@ -50,7 +50,10 @@ export const CardCenter = (props) => {
                 {props.title}
               </h3>
 
-              <div id="contenedor tags" className="flex flex-wrap mb-3 h-8 ">
+              <div
+                id="contenedor tags"
+                className="flex flex-wrap mb-3 sm:h-2 h-8 "
+              >
                 {props.tags?.map((tag, index) => (
                   <Button key={`${props._id}-${index}`} type="tag">
                     {tag}

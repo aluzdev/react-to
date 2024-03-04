@@ -94,7 +94,7 @@ export const Center = ({
   };
 
   return (
-    <div className="w-[40rem]">
+    <div className="md:w-[531px] lg:w-[480px] lg:pr-0 xl:pr-0 xl:w-[650px]">
       <div className="my-3 flex justify-between">
         <div>
           <Button
@@ -102,16 +102,14 @@ export const Center = ({
             onClick={() => handleFilterClick("Relevant")}
             className={filterType === "Relevant" ? "font-bold" : ""}
           >
-            {" "}
-            Relevantes
+            Relevants
           </Button>
           <Button
             type="filter"
             onClick={() => handleFilterClick("Lastest")}
             className={filterType === "Lastest" ? "font-bold" : ""}
           >
-            {" "}
-            Últimos
+            Latest
           </Button>
           <Button
             type="filter"
@@ -126,7 +124,7 @@ export const Center = ({
                 : ""
             }
           >
-            Destacados
+            Top
           </Button>
         </div>
 
@@ -142,28 +140,28 @@ export const Center = ({
                     : ""
                 }
               >
-                Semana
+                Week
               </Button>
               <Button
                 type="filter"
                 onClick={() => handleFilterClick("Month")}
                 className={filterType === "Month" ? "font-bold" : ""}
               >
-                Mes
+                Month
               </Button>
               <Button
                 type="filter"
                 onClick={() => handleFilterClick("Year")}
                 className={filterType === "Year" ? "font-bold" : ""}
               >
-                Año
+                Year
               </Button>
               <Button
                 type="filter"
                 onClick={() => handleFilterClick("Infinity")}
                 className={filterType === "Infinity" ? "font-bold" : ""}
               >
-                Infinito
+                Infinity
               </Button>
             </>
           )}
