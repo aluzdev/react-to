@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { Button } from "../components/elements/Button";
 import { Navbar } from "../components/Templates/Navbar";
 import { Comentario, Heart, BlackHeart, Bookmark } from "../icons";
-import { CardCenter } from "../components/elements/CardCenter";
+import { IndividualCard } from "../components/elements/IndividualCard";
 import { postById } from "../api";
 
 export const IndividualPostPage = () => {
@@ -60,7 +60,7 @@ export const IndividualPostPage = () => {
 
         <div className="flex">
           <div className="flex pt-5 pr-4 justify-center w-[380px] md:w-[620px] lg:w-[620px] xl:w-[720px] xxl:w-[920px]">
-            <CardCenter></CardCenter>
+            <IndividualCard post={post} />
           </div>
         </div>
         <div
