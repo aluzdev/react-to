@@ -35,7 +35,7 @@ export const Center = ({
     if (type === "Relevant") {
       const relevantPosts = posts.filter((post) => post.relevant === true);
       setFilteredPosts(relevantPosts);
-    } else if (type === "Lastest") {
+    } else if (type === "Latest") {
       const latestPosts = [...posts].sort((a, b) => {
         // Ordeno todo de forma descendente según la propiedad createdAt
         return new Date(b.createdAt) - new Date(a.createdAt);
@@ -106,8 +106,8 @@ export const Center = ({
           </Button>
           <Button
             type="filter"
-            onClick={() => handleFilterClick("Lastest")}
-            className={filterType === "Lastest" ? "font-bold" : ""}
+            onClick={() => handleFilterClick("Latest")}
+            className={filterType === "Latest" ? "font-bold" : ""}
           >
             Latest
           </Button>

@@ -38,8 +38,8 @@ export const Navbar = ({ setSearchBar, posts, setFilteredPosts }) => {
         </div>
         <div className="flex ">
           {!isLoggedIn ? (
-            <div className="  flex flex-row ">
-              <div className="hidden md:block lg:block xl:block items-center space-x-2 pr-2 md:mr-[-30px]">
+            <div className="hidden md:block lg:block xl:block items-center space-x-2 pr-2 md:mr-[-30px]">
+              <div className="flex flex-row items-center">
                 <span className="md:pr-5" type="login" width="nav">
                   <Link to="/login">Log in</Link>
                 </span>
