@@ -9,6 +9,7 @@ import {
   Fire,
   Bookmark,
 } from "../../icons/";
+import { formatDateAndTimeAgo } from "../../utils";
 
 export const CardCenter = (props) => {
   const navigate = useNavigate();
@@ -38,7 +39,9 @@ export const CardCenter = (props) => {
               />
               <div className="pl-3 flex flex-col  gap-0">
                 <p className="text-[14px]">{props.author?.name}</p>
-                <p className="text-[12px]">{props.createdAt}</p>
+                <p className="text-[12px]">
+                  {formatDateAndTimeAgo(props.createdAt)}
+                </p>
               </div>
             </div>
 
