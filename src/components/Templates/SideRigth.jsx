@@ -4,8 +4,6 @@ import { Button } from "../elements/Button";
 import { API_URL } from "../../api";
 
 const SideBarButton = ({ post }) => {
-  // Corrected component name
-  console.log({ post });
   return (
     <Button type="rigth_sidebar">
       <p>{post.title}</p>
@@ -18,6 +16,7 @@ export const SideRigth = ({ tagsToFilterBy }) => {
   const [filteredPosts, setFilteredPosts] = useState(null);
 
   useEffect(() => {
+    console.log("use effect ran again");
     const fetchPosts = async () => {
       try {
         const response = await fetch(`${API_URL}/posts`);
@@ -39,7 +38,7 @@ export const SideRigth = ({ tagsToFilterBy }) => {
     };
 
     fetchPosts();
-  }, [tagsToFilterBy]);
+  }, []);
   return (
     <>
       <aside className="hidden lg:block lg:w-[240px] md:pt-[4px] xl:w-[325px] lg:pl-2 xl:pl-0 xl:block">
