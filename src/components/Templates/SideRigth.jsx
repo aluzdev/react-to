@@ -16,7 +16,6 @@ export const SideRigth = ({ tagsToFilterBy }) => {
   const [filteredPosts, setFilteredPosts] = useState(null);
 
   useEffect(() => {
-    console.log("use effect ran again");
     const fetchPosts = async () => {
       try {
         const response = await fetch(`${API_URL}/posts`);
