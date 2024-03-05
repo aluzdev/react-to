@@ -1,69 +1,78 @@
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import { Button } from "../elements/Button";
+import { API_URL } from "../../api";
 
-export const SideRigth = () => {
+const SideBarButton = ({ post }) => {
+  return (
+    <Button type="rigth_sidebar">
+      <p>{post.title}</p>
+      <p className="text-gray-500 text-[.9rem]">{post.comments} comments</p>
+    </Button>
+  );
+};
+
+export const SideRigth = ({ tagsToFilterBy }) => {
+  const [filteredPosts, setFilteredPosts] = useState(null);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await fetch(`${API_URL}/posts`);
+        const posts = await response.json();
+
+        const filteredPostsArray = tagsToFilterBy.map((tag) => {
+          const filteredPostsByTag = posts.filter((post) =>
+            post.tags
+              .map((tag) => tag.toLowerCase())
+              .includes(tag.toLowerCase())
+          );
+          return { [tag]: filteredPostsByTag };
+        });
+
+        setFilteredPosts(filteredPostsArray);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchPosts();
+  }, []);
   return (
     <>
       <aside className="hidden lg:block lg:w-[240px] md:pt-[4px] xl:w-[325px] lg:pl-2 xl:pl-0 xl:block">
         <div className="divide-y divide-gray-300 bg-slate-50 lg:w-[240px] lg:pl-2 xl:w-[325px] xl:ml-0 rounded-md">
           <Button type="rigth_sidebar">
-            <p className="text-xl font-semibold"> #discuss</p>
-            <p className="text-gray-500 text-xs ">
-              Discussion threads targeting the whole community
+            <p className="text-xl font-semibold">
+              {filteredPosts
+                ? Object.keys(filteredPosts[0])?.toString()
+                : "#webdev"}
             </p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Whitehouse Declares Software Should Be Memory Safe</p>
-            <p className="text-gray-500 text-[.9rem]">5 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Are You Embracing AI in Your Dev Workflow?</p>
-            <p className="text-gray-500 text-[.9rem]">5 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>
-              Explain "Memory Safe Programming Languages" Like I'm Five Please
-            </p>
-            <p className="text-gray-500 text-[.9rem]">8 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Mentor Matching — February 2024 🤝</p>
-            <p className="text-gray-500 text-[.9rem]">3 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Psst... I can build this in a weekend!</p>
-            <p className="text-gray-500 text-[.9rem]">10 comments</p>
-          </Button>
-        </div>
-        <br />
-        <div className="divide-y divide-gray-300 bg-slate-50 lg:w-[240px] lg:pl-2 xl:w-[325px] xl:ml-0 rounded-md">
-          <Button type="rigth_sidebar">
-            <p className="text-xl font-semibold"> #discuss</p>
             <p className="text-gray-500 text-xs">
               Discussion threads targeting the whole community
             </p>
           </Button>
+          {filteredPosts &&
+            Object.values(filteredPosts[0])
+              .flat()
+              .map((post, index) => <SideBarButton key={index} post={post} />)}
+        </div>
+        <br />
+        <div className="divide-y divide-gray-300 bg-slate-50 lg:w-[240px] lg:pl-2 xl:w-[325px] xl:ml-0 rounded-md">
           <Button type="rigth_sidebar">
-            <p>Whitehouse Declares Software Should Be Memory Safe</p>
-            <p className="text-gray-500 text-[.9rem]">5 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Are You Embracing AI in Your Dev Workflow?</p>
-            <p className="text-gray-500 text-[.9rem]">5 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>
-              Explain "Memory Safe Programming Languages" Like I'm Five Please
+            <p className="text-xl font-semibold">
+              {filteredPosts
+                ? Object.keys(filteredPosts[1])?.toString()
+                : "#beginners"}
             </p>
-            <p className="text-gray-500 text-[.9rem]">8 comments</p>
+            <p className="text-gray-500 text-xs">
+              Discussion threads targeting the whole community
+            </p>
           </Button>
-          <Button type="rigth_sidebar">
-            <p>Mentor Matching — February 2024 🤝</p>
-            <p className="text-gray-500 text-[.9rem]">3 comments</p>
-          </Button>
-          <Button type="rigth_sidebar">
-            <p>Psst... I can build this in a weekend!</p>
-            <p className="text-gray-500 text-[.9rem]">10 comments</p>
-          </Button>
+          {filteredPosts &&
+            Object.values(filteredPosts[1])
+              .flat()
+              .map((post, index) => <SideBarButton key={index} post={post} />)}
         </div>
       </aside>
     </>

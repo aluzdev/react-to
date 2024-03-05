@@ -38,7 +38,7 @@ export const HomePage = () => {
             filteredPosts={filteredPosts}
             setFilteredPosts={setFilteredPosts}
           />
-          <SideRigth />
+          <SideRigth tagsToFilterBy={["#webdev", "#beginners"]} />
         </div>
       </main>
     </>
