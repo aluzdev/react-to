@@ -6,6 +6,7 @@ import { Login } from "./pages/Login";
 import { IndividualPostPage } from "./pages/IndividualPostPage";
 import { Register } from "./pages/Register";
 //something
+//more work
 function App() {
   return (
     <>
