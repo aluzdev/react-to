@@ -5,7 +5,7 @@ import { HomePage } from "./pages/HomePage";
 import { Login } from "./pages/Login";
 import { IndividualPostPage } from "./pages/IndividualPostPage";
 import { Register } from "./pages/Register";
-
+//something
 function App() {
   return (
     <>
